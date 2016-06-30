@@ -1,0 +1,14 @@
+= simple_form_for @suit, html: { multipart: true } do |f|
+  - if @suit.errors.any?
+    #errors
+      %p
+        = @suit.errors.count
+        Prevented this suit froms saving
+      %ul
+        - @suit.errors.full_messages.each do |msg|
+          %li= msg
+  .panel-body
+    = f.input :title, input_html: { class: 'form-controle'}
+    = f.input :description, input_html: { class: 'form-controle'}
+
+  = f.button :submit, class: "btn btn-primary"

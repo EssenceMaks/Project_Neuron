@@ -1,0 +1,6 @@
+%h1= @suit.title
+%p= @suit.description	
+
+= link_to "Back", root_path, class: "btn btn-default"
+= link_to "Edit", edit_suit_path, class: "btn btn-default"
+= link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
