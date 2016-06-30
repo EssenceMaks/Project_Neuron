@@ -18,19 +18,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*
+.body{
+	background-image: url('points.png');
+	font-family: 'Ubuntu'
+}
+*/
+
 .mainnavigation {
+	background-image: url('congruent_pentagon.png');
 	position: fixed;
 	margin-left: 25%;
 	margin-right: 25%;
-	width: 50%;
     min-width: 1000px;
 	bottom: 10px;
 	border: 3px solid;
 	border-color: red;
+	font-weight: 800;
 }
 
+.navbar-brand {
+	position: relative;
+	left: 60px;
+}
 
 .container {
 	border: 4px double black;
 	border-color: red;
+	margin-bottom: 150px;
 }

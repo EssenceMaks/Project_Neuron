@@ -11,11 +11,13 @@
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "alert"
     = yield
-
+ 
   .mainnavigation
-    %nav.navbar.navbar-default
+    .col-md-3
+      .navbar-brand= link_to "Sign in", root_path
+    .col-md-3
       .navbar-brand= link_to "Suits", root_path
-
-      %ul.nav.navbar-nav.navbar-right
-        %li= link_to "New Suit", new_suit_path
-        %li= link_to "Sinf Out", root_path
+    .col-md-3
+      .navbar-brand= link_to "New Suit", new_suit_path
+    .col-md-3
+      .navbar-brand= link_to "Sinf Out", root_path

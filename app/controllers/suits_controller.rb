@@ -42,7 +42,7 @@ class SuitsController < ApplicationController
 
 	private
 		def suit_params
-			params.require(:suit).permit(:title, :description)
+			params.require(:suit).permit(:title, :description, :image)
 		end
 
 		def find_suit
