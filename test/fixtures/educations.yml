@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  college: MyText
+  suit_id: 
+
+two:
+  college: MyText
+  suit_id: 

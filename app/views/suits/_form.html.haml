@@ -12,4 +12,44 @@
     = f.input :description, input_html: { class: 'form-controle'}
     = f.input :image, input_html: { class: 'form-controle'}
 
+    .container
+      %h3 Technologies I work with:
+      #my_skills
+        = f.simple_fields_for :my_skills do |skill|
+          = render 'my_skill_fields', f: skill
+        .links
+          = link_to_add_association 'Add Skills', f, :my_skills, class: "btn btn-default add-button"
+
+    .container
+      %h3 Interested in:
+      #interested_ins
+        = f.simple_fields_for :interested_ins do |interested_in|
+          = render 'interested_in_fields', f: interested_in
+        .links
+          = link_to_add_association 'Add Interests', f, :interested_ins, class: "btn btn-default add-button"
+
+    .container
+      %h3 Education:
+      #educations
+        = f.simple_fields_for :educations do |education|
+          = render 'education_fields', f: education
+        .links
+          = link_to_add_association 'Add Education', f, :educations, class: "btn btn-default add-button"
+
+    .container
+      %h3 Additional education courses and listened:
+      #additional_educations
+        = f.simple_fields_for :additional_educations do |additional_education|
+          = render 'additional_education_fields', f: additional_education
+        .links
+          = link_to_add_association 'Add accadamy', f, :additional_educations, class: "btn btn-default add-button"
+
+    .container
+      %h3 Reason and motivation to get a new work:
+      #reasons
+        = f.simple_fields_for :reasons do |reason|
+          = render 'reason_fields', f: reason
+        .links
+          = link_to_add_association 'Add Motivation', f, :reasons, class: "btn btn-default add-button"
+
   = f.button :submit, class: "btn btn-primary"
