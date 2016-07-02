@@ -1,7 +1,59 @@
-= image_tag @suit.image.url(:medium, class: "suit_image")
-%h1= @suit.title
-%p= @suit.description	
+.suit_header
+  .col-sm-2
+    .suit_foto
+      = image_tag @suit.image.url(:medium, class: "suit_image")
+  .col-sm-4
+    #user_suit_name
+      %h1= @suit.title
+      %p= @suit.description
+  .col-sm-3
+    #user_mobile_number
+      %h2 SOME NUMBER
+  .col-sm-3
+    #user_sosial_networks
+      %h2 horizontal ul list of sosial networks
 
-= link_to "Back", root_path, class: "btn btn-default"
-= link_to "Edit", edit_suit_path, class: "btn btn-default"
-= link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+.suit_text
+  .col-sm-1
+  .col-sm-10
+    
+    #Technologies_I_work_with:
+      %h3 Technologies I work with:
+      %ul
+        - @suit.my_skills.each do |skill|
+          %li= skill.skill 
+
+    #Interested_in:
+      %h3 Interested in:
+      %ul
+        - @suit.interested_ins.each do |interested_in|
+          %li= interested_in.futureskill
+
+    #Education:
+      %h3 Education:
+      %ul
+        - @suit.educations.each do |education|
+          %li= education.college
+
+    #Additional_education:
+      %h3 Additional education:
+      %ul
+        - @suit.additional_educations.each do |additional_education|
+          %li= additional_education.academy 
+
+    #Reasons:
+      %h3 Reason and motivation to get a new work:
+      %ul
+        - @suit.reasons.each do |reasone|
+          %li= reasone.motivation 
+  .col-sm-1
+    = link_to "Back", root_path, class: "btn btn-default"
+    = link_to "Edit", edit_suit_path, class: "btn btn-default"
+    = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+
+.suit_navigation
+  .col-sm-4
+  .col-sm-4
+    = link_to "Back", root_path, class: "btn btn-default"
+    = link_to "Edit", edit_suit_path, class: "btn btn-default"
+    = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"

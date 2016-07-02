@@ -25,13 +25,20 @@
 }
 */
 
+.body {
+	width: 1400px;
+	margin: auto;
+	height: auto;
+	align-content: center;
+	background-image: url('points.png');
+}
+
 .mainnavigation {
-	background-image: url('congruent_pentagon.png');
-	position: fixed;
-	margin-left: 25%;
-	margin-right: 25%;
-    min-width: 1000px;
-	bottom: 10px;
+	background: #69F0AE;
+	position: fixed; 
+	width: 1400px;
+	height: 70px;
+	bottom: 0px;
 	border: 3px solid;
 	border-color: red;
 	font-weight: 800;
@@ -42,9 +49,42 @@
 	left: 60px;
 }
 
-.container {
+.suit_header {
+	position: relative;
+	background-image: url('congruent_pentagon.png');
+	height: 150px;
+	width: 1600px;
+	right: 170px;
+    margin-top: 10px;
+    margin-bottom: 100px; 
+}
+
+
+.suit_body {
 	border: 4px double black;
 	border-color: red;
 	margin-bottom: 150px;
+	min-width: 1250px;
+	width: 90%;
+    margin-top: 0px;
+    margin-right: 5%;
+    margin-bottom: 150px;
+    margin-left: 5%; 
+    height: 1000px;	
 }
 
+.suit_text {
+	background-image: url('geometry2.png');
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 500px;
+	overflow: auto;
+}
+
+.suit_navigation{
+	text-align: center;
+}
+
+#Technologies_I_work_with {
+	
+}

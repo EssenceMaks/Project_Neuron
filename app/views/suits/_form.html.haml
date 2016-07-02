@@ -42,7 +42,7 @@
         = f.simple_fields_for :additional_educations do |additional_education|
           = render 'additional_education_fields', f: additional_education
         .links
-          = link_to_add_association 'Add accadamy', f, :additional_educations, class: "btn btn-default add-button"
+          = link_to_add_association 'Add academy', f, :additional_educations, class: "btn btn-default add-button"
 
     .container
       %h3 Reason and motivation to get a new work:
@@ -53,3 +53,10 @@
           = link_to_add_association 'Add Motivation', f, :reasons, class: "btn btn-default add-button"
 
   = f.button :submit, class: "btn btn-primary"
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

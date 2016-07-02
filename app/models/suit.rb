@@ -18,6 +18,6 @@ class Suit < ActiveRecord::Base
 	
 	validates :title, :description, :image, presence: true
 
-	has_attached_file :image, styles: { medium: "300x300" }
+	has_attached_file :image, styles: { medium: "210x175" } 
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end
