@@ -41,19 +41,16 @@
         - @suit.additional_educations.each do |additional_education|
           %li= additional_education.academy 
 
-    #Reasons:
-      %h3 Reason and motivation to get a new work:
-      %ul
-        - @suit.reasons.each do |reasone|
-          %li= reasone.motivation 
   .col-sm-1
+    <br>
     = link_to "Back", root_path, class: "btn btn-default"
     = link_to "Edit", edit_suit_path, class: "btn btn-default"
     = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
 
-.suit_navigation
-  .col-sm-4
-  .col-sm-4
-    = link_to "Back", root_path, class: "btn btn-default"
-    = link_to "Edit", edit_suit_path, class: "btn btn-default"
-    = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+  .suit_navigation
+    .col-sm-4
+    .col-sm-4
+      = link_to "Back", root_path, class: "btn btn-default"
+      = link_to "Edit", edit_suit_path, class: "btn btn-default"
+      = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+<br>

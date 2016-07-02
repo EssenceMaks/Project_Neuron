@@ -44,7 +44,7 @@ class SuitsController < ApplicationController
 		def suit_params
 			params.require(:suit).permit(:title, :description, :image, my_skills_attributes: [:id, :skill, :_destroy], 
 				interested_ins_attributes: [:id, :futureskill, :_destroy], educations_attributes: [:id, :college, :_destroy], 
-				additional_educations_attributes: [:id, :academy, :_destroy], reasons: [:id, :motivation, :_destroy] )
+				additional_educations_attributes: [:id, :academy, :_destroy])
 		end
 
 		def find_suit

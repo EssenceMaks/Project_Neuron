@@ -44,13 +44,8 @@
         .links
           = link_to_add_association 'Add academy', f, :additional_educations, class: "btn btn-default add-button"
 
-    .container
-      %h3 Reason and motivation to get a new work:
-      #reasons
-        = f.simple_fields_for :reasons do |reason|
-          = render 'reason_fields', f: reason
-        .links
-          = link_to_add_association 'Add Motivation', f, :reasons, class: "btn btn-default add-button"
+    
+    
 
   = f.button :submit, class: "btn btn-primary"
 

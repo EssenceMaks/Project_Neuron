@@ -34,20 +34,22 @@
 }
 
 .mainnavigation {
-	background: #69F0AE;
+	background-image: url('congruent_pentagon.png');
 	position: fixed; 
-	width: 1400px;
+	width: 800px;
+	margin-left: 300px;
 	height: 70px;
 	bottom: 0px;
 	border: 3px solid;
-	border-color: red;
+	border-color: gold;
 	font-weight: 800;
+	border-radius: 40px 40px 5px 5px;
 }
-
-.navbar-brand {
-	position: relative;
-	left: 60px;
-}
+		.navbar-brand {
+			position: relative;
+			left: 40px;
+			margin-top: 10px;
+		}
 
 .suit_header {
 	position: relative;
@@ -56,29 +58,31 @@
 	width: 1600px;
 	right: 170px;
     margin-top: 10px;
-    margin-bottom: 100px; 
+    margin-bottom: 50px;
+    border-radius: 4px 4px 30px 30px; 
 }
-
+		.suit_foto {
+			margin-left: 30px;
+		}
 
 .suit_body {
-	border: 4px double black;
-	border-color: red;
-	margin-bottom: 150px;
+	margin-bottom: 100px;
 	min-width: 1250px;
 	width: 90%;
     margin-top: 0px;
     margin-right: 5%;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
     margin-left: 5%; 
     height: 1000px;	
 }
 
 .suit_text {
-	background-image: url('geometry2.png');
+	background-image: url('congruent_pentagon.png');
 	margin-top: 20px;
 	margin-bottom: 20px;
-	height: 500px;
+	height: 700px;
 	overflow: auto;
+	border-radius: 5px;
 }
 
 .suit_navigation{
