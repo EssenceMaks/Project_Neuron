@@ -3,6 +3,7 @@ class SuitsController < ApplicationController
 	
 	def index
 		@suit = Suit.all.order("created_at DESC")
+		
 	end
 
 	def show

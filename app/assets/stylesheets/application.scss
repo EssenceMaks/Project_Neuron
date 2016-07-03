@@ -89,6 +89,26 @@
 	text-align: center;
 }
 
-#Technologies_I_work_with {
-	
+
+.search_suit_show {
+	background-image: url('congruent_pentagon.png');
+	height: 75px;
+	margin-bottom: 10px;
+	border-radius: 0px 0px 4px 4px; 
+}
+
+.body_suit_show{
+	height: 750px;
+	overflow: auto;
+	background-image: url('congruent_pentagon.png');
+	border-radius: 4px 4px 30px 30px; 
+}
+
+.user_plate {
+	height: 300px;
+	background-image: url('geometry2.png');
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	border-radius: 4px; 
 }

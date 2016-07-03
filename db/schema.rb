@@ -40,15 +40,6 @@ ActiveRecord::Schema.define(version: 20160702025927) do
 
   add_index "interested_ins", ["suit_id"], name: "index_interested_ins_on_suit_id"
 
-  create_table "motivations", force: :cascade do |t|
-    t.text     "object"
-    t.integer  "suit_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "motivations", ["suit_id"], name: "index_motivations_on_suit_id"
-
   create_table "my_skills", force: :cascade do |t|
     t.string   "skill"
     t.integer  "suit_id"
@@ -57,15 +48,6 @@ ActiveRecord::Schema.define(version: 20160702025927) do
   end
 
   add_index "my_skills", ["suit_id"], name: "index_my_skills_on_suit_id"
-
-  create_table "reasons", force: :cascade do |t|
-    t.text     "motivation"
-    t.integer  "suit_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "reasons", ["suit_id"], name: "index_reasons_on_suit_id"
 
   create_table "suits", force: :cascade do |t|
     t.string   "title"

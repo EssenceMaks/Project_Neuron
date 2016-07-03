@@ -1,11 +1,32 @@
-%h1 See what people are wearing
+.head_suit_show
+  .search_suit_show
+    .col-xs-2.col-md-2
+    .col-xs-6.col-md-6
+      %h2 Look at these people dressed :)
+    .col-xs-4.col-md-4
+      %h2 Search menu
+    
 
-- @suit.each_slice(3) do |suits|
-  .row
-    - suits.each do |suit|
-      .col-md-4
-        .suit
-          .image_wrapper
-            = link_to suit do
-              = image_tag suit.image.url(:medium)
-          %h2= link_to suit.title, suit
+.body_suit_show
+  .col-xs-1.col-md-1
+  .col-xs-10.col-md-10
+    - @suit.each_slice(1) do |suits|
+      .user_plate
+        - suits.each do |suit|
+          .col-xs-3.col-md-3
+            .suit
+              .image_wrapper
+                = link_to suit do
+                  = image_tag suit.image.url(:medium)
+          .col-xs-3.col-md-3
+            %h3= link_to suit.title, suit
+            %h3 Name
+            %h2 Nik_name
+            %h2 Contakts
+          .col-xs-3.col-md-3
+            %h4 User Skills
+          .col-xs-3.col-md-3
+            %h2 Projects and Dignity
+  .col-xs-1.col-md-1
+    
+
