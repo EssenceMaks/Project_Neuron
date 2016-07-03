@@ -1,57 +1,65 @@
-= simple_form_for @suit, html: { multipart: true } do |f|
-  - if @suit.errors.any?
-    #errors
-      %p
-        = @suit.errors.count
-        Prevented this suit froms saving
-      %ul
-        - @suit.errors.full_messages.each do |msg|
-          %li= msg
-  .panel-body
-    = f.input :title, input_html: { class: 'form-controle'}
-    = f.input :description, input_html: { class: 'form-controle'}
-    = f.input :image, input_html: { class: 'form-controle'}
+.caption
+  %h1 SEW A SUIT
+.suit_text
+  .col-xs-1.col-md-1
+    .btn_back
+    = link_to "Back", root_path, class: "btn btn-default"
+  .col-xs-10.col-md-10
+    .tit_desc_img_block
+      = simple_form_for @suit, html: { multipart: true } do |f|
+        - if @suit.errors.any?
+          #errors
+            %p
+              = @suit.errors.count
+              Prevented this suit froms saving
+            %ul
+              - @suit.errors.full_messages.each do |msg|
+                %li= msg
+        .panel-body
+          = f.input :title, label: 'Give a Name to this Suit', input_html: { title: "NAME of your suit", class: 'form-control'}
+          = f.input :description, label: 'Give it a description (perhaps, for whom you made it)', input_html: { class: 'form-control'}
+          = f.input :image, label: 'Attach an image that will be in this suit', input_html: { class: 'form-control'}
 
-    .container
-      %h3 Technologies I work with:
-      #my_skills
-        = f.simple_fields_for :my_skills do |skill|
-          = render 'my_skill_fields', f: skill
-        .links
-          = link_to_add_association 'Add Skills', f, :my_skills, class: "btn btn-default add-button"
+          
+          .skills_interests
+            .col-xs-6.col-md-6
+              %h3 Technologies I work with:
+              #my_skills
+                = f.simple_fields_for :my_skills do |skill|
+                  = render 'my_skill_fields', f: skill
+                .links
+                  = link_to_add_association 'Add Technologi Skill', f, :my_skills, class: "btn btn-default add-button"
 
-    .container
-      %h3 Interested in:
-      #interested_ins
-        = f.simple_fields_for :interested_ins do |interested_in|
-          = render 'interested_in_fields', f: interested_in
-        .links
-          = link_to_add_association 'Add Interests', f, :interested_ins, class: "btn btn-default add-button"
+            .col-xs-6.col-md-6
+              %h3 Interested in:
+              #interested_ins
+                = f.simple_fields_for :interested_ins do |interested_in|
+                  = render 'interested_in_fields', f: interested_in
+                .links
+                  = link_to_add_association 'Add Interests', f, :interested_ins, class: "btn btn-default add-button"
+          
+          .edu_addi_reaso
+            .col-xs-12.col-md-12
+              %h3 Education:
+              #educations
+                = f.simple_fields_for :educations do |education|
+                  = render 'education_fields', f: education
+                .links
+                  = link_to_add_association 'Add Education', f, :educations, class: "btn btn-default add-button"
 
-    .container
-      %h3 Education:
-      #educations
-        = f.simple_fields_for :educations do |education|
-          = render 'education_fields', f: education
-        .links
-          = link_to_add_association 'Add Education', f, :educations, class: "btn btn-default add-button"
-
-    .container
-      %h3 Additional education courses and listened:
-      #additional_educations
-        = f.simple_fields_for :additional_educations do |additional_education|
-          = render 'additional_education_fields', f: additional_education
-        .links
-          = link_to_add_association 'Add academy', f, :additional_educations, class: "btn btn-default add-button"
-
+          .edu_addi_reaso
+            .col-xs-12.col-md-12
+              %h3 Additional education courses and listened:
+              #additional_educations
+                = f.simple_fields_for :additional_educations do |additional_education|
+                  = render 'additional_education_fields', f: additional_education
+                .links
+                  = link_to_add_association 'Add academy', f, :additional_educations, class: "btn btn-default add-button"
+        .sub_button
+          = f.button :submit, class: "btn btn-primary sub_button"
+        .btn_bottom_back
+          = link_to "Back", root_path, class: "btn btn-default btn_bottom_back"
+  .col-xs-1.col-md-1
     
-    
 
-  = f.button :submit, class: "btn btn-primary"
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>

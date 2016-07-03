@@ -10,23 +10,33 @@
 .body_suit_show
   .col-xs-1.col-md-1
   .col-xs-10.col-md-10
-    - @suit.each_slice(1) do |suits|
+    - @suit.each_slice(1) do |s|
       .user_plate
-        - suits.each do |suit|
+        - s.each do |su|
           .col-xs-3.col-md-3
             .suit
-              .image_wrapper
-                = link_to suit do
-                  = image_tag suit.image.url(:medium)
+              .suits_fotos
+                = link_to su do
+                  = image_tag su.image, class: "suits_fotos"
           .col-xs-3.col-md-3
-            %h3= link_to suit.title, suit
+            %h3= link_to su.title, su
             %h3 Name
             %h2 Nik_name
             %h2 Contakts
           .col-xs-3.col-md-3
-            %h4 User Skills
+            .skill_show
+              %h5 skill list
+              %ul
+                = su.my_skills.each do |t|
+                  %li= t.skill.upcase
           .col-xs-3.col-md-3
-            %h2 Projects and Dignity
+            %h5 Projects and Dignity
+            .skill_show
+              %h5 skill list
+              %ul
+                = link_to su do
+                  = su.my_skills.map do |skill|
+                    %li= skill.skill 
   .col-xs-1.col-md-1
     
 

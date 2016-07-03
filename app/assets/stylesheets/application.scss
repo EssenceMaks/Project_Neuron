@@ -31,6 +31,7 @@
 	height: auto;
 	align-content: center;
 	background-image: url('points.png');
+	font-family: Ubuntu;
 }
 
 .mainnavigation {
@@ -51,6 +52,8 @@
 			margin-top: 10px;
 		}
 
+/* current suit show page*/
+
 .suit_header {
 	position: relative;
 	background-image: url('congruent_pentagon.png');
@@ -58,12 +61,22 @@
 	width: 1600px;
 	right: 170px;
     margin-top: 10px;
-    margin-bottom: 50px;
-    border-radius: 4px 4px 30px 30px; 
+    margin-bottom: 100px;
+    border-radius: 4px 4px 35px 35px; 
 }
 		.suit_foto {
-			margin-left: 30px;
+			margin-left: 40px;
+			height: 230px;
+			width: 190px;
+			border-radius: 4px 4px 20px 20px;
 		}
+
+
+.suit_navigation{
+	text-align: center;
+}
+
+/* Show all suits page*/
 
 .suit_body {
 	margin-bottom: 100px;
@@ -76,6 +89,45 @@
     height: 1000px;	
 }
 
+.search_suit_show {
+	background-image: url('congruent_pentagon.png');
+	height: 75px;
+	margin-bottom: 10px;
+	border-radius: 0px 0px 4px 4px; 
+}
+
+
+.body_suit_show{
+	height: 750px;
+	overflow: auto;
+	background-image: url('congruent_pentagon.png');
+	border-radius: 4px 4px 30px 30px; 
+}
+	.user_plate {
+		height: 300px;
+		background-image: url('geometry2.png');
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding-top: 10px;
+		border-radius: 5px; 
+	}
+			.suits_fotos{
+				height: 280px;
+			    width: 200px;
+			    border-radius: 10px;
+			}
+			.skill_show{
+				height: 250px;
+				overflow: auto;
+			}
+
+/* Form page, edit and page*/
+.caption {
+	text-align: center;
+	color: red;
+	font-weight: bolder;
+}
+
 .suit_text {
 	background-image: url('congruent_pentagon.png');
 	margin-top: 20px;
@@ -85,30 +137,39 @@
 	border-radius: 5px;
 }
 
-.suit_navigation{
-	text-align: center;
+.tit_desc_img_block {
 }
-
-
-.search_suit_show {
-	background-image: url('congruent_pentagon.png');
-	height: 75px;
-	margin-bottom: 10px;
-	border-radius: 0px 0px 4px 4px; 
-}
-
-.body_suit_show{
-	height: 750px;
-	overflow: auto;
-	background-image: url('congruent_pentagon.png');
-	border-radius: 4px 4px 30px 30px; 
-}
-
-.user_plate {
-	height: 300px;
-	background-image: url('geometry2.png');
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-top: 10px;
-	border-radius: 4px; 
-}
+	    .btn_back {
+		margin-top: 50%;
+		}
+		.add_form{
+			margin: 10px;
+		}
+		.sub_button{
+			width: 100%;
+			height: 50px;
+		}
+		.btn_bottom_back{
+			width: 120px;
+			height: 35px;
+			margin: 10px;
+		}
+		.add-button{
+			display: inline-block;
+		}
+		#my_skills {
+			background-image: url('geometry2.png');
+			border-radius: 15px;
+		}
+		#interested_ins {
+			background-image: url('geometry2.png');
+			border-radius: 15px;
+		}
+		#educations {
+			background-image: url('geometry2.png');
+			border-radius: 15px;
+		}
+		#additional_educations {
+			background-image: url('geometry2.png');
+			border-radius: 15px;
+		}

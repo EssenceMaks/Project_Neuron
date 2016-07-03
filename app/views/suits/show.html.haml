@@ -1,7 +1,7 @@
 .suit_header
   .col-sm-2
-    .suit_foto
-      = image_tag @suit.image.url(:medium, class: "suit_image")
+    .block_suit_foto
+      = link_to(image_tag(@suit.image.url , :title => "Back to Welcome Page", :class => "suit_foto"), root_path)
   .col-sm-4
     #user_suit_name
       %h1= @suit.title
