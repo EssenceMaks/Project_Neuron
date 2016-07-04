@@ -3,7 +3,7 @@ class SuitsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	
 	def index
-		@suit = Suit.all.order
+		@suit = Suit.all.order("created_at DESC")
 	end
 
 	def show
