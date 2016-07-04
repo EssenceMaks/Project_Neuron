@@ -1,5 +1,6 @@
 class SuitsController < ApplicationController
 	before_action :find_suit, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 	
 	def index
 		@suit = Suit.all.order("created_at DESC")
@@ -10,11 +11,13 @@ class SuitsController < ApplicationController
 	end
 
 	def new
-		@suit = Suit.new
+	  #	@suit = Suit.new
+		@suit = current_user.suits.build
 	end
 
 	def create
-		@suit = Suit.new(suit_params)
+      # @suit = Suit.new(suit_params)
+		@suit = current_user.suits.build(suit_params)
 
 		if @suit.save
 			redirect_to @suit, notice: "The Suit is sewed"

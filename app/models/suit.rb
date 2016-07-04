@@ -1,4 +1,5 @@
 class Suit < ActiveRecord::Base
+	belongs_to :user
 
 	has_many :my_skills
 	accepts_nested_attributes_for :my_skills, reject_if: proc { |attributes| attributes['skill'].blank? }, allow_destroy: true

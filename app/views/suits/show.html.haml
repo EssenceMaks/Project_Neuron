@@ -4,7 +4,7 @@
       = link_to(image_tag(@suit.image.url , :title => "Back to Welcome Page", :class => "suit_foto"), root_path)
   .col-sm-4
     #user_suit_name
-      %h1= @suit.title
+      %h4= @suit.title
       %p= @suit.description
   .col-sm-3
     #user_mobile_number
@@ -12,6 +12,7 @@
   .col-sm-3
     #user_sosial_networks
       %h2 horizontal ul list of sosial networks
+      %p= @suit.user.email
 
 .suit_text
   .col-sm-1
@@ -44,13 +45,15 @@
   .col-sm-1
     <br>
     = link_to "Back", root_path, class: "btn btn-default"
-    = link_to "Edit", edit_suit_path, class: "btn btn-default"
-    = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+    - if user_signed_in?
+      = link_to "Edit", edit_suit_path, class: "btn btn-default"
+      = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
 
   .suit_navigation
     .col-sm-4
     .col-sm-4
       = link_to "Back", root_path, class: "btn btn-default"
-      = link_to "Edit", edit_suit_path, class: "btn btn-default"
-      = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
+      - if user_signed_in?
+        = link_to "Edit", edit_suit_path, class: "btn btn-default"
+        = link_to "Delete", suit_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"
 <br>
