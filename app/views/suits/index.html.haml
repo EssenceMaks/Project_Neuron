@@ -1,5 +1,5 @@
 .head_suit_show
-  .search_suit_show
+  .search_suits_show
     .col-xs-2.col-md-2
     .col-xs-6.col-md-6
       %h2 Look at these people dressed :)
@@ -7,7 +7,7 @@
       %h2 Search menu
     
 
-.body_suit_show
+.body_suits_show
   .col-xs-1.col-md-1
   .col-xs-10.col-md-10
     - @suit.each_slice(1) do |s|
@@ -17,7 +17,7 @@
             .suit
               .suits_fotos
                 = link_to su do
-                  = image_tag su.image, class: "suits_fotos"
+                  = image_tag su.image.url, class: "suits_fotos"
           .col-xs-3.col-md-3
             %h3= link_to su.title, su
             %h3 Name
