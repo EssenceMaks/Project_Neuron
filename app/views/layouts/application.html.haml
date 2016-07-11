@@ -24,6 +24,6 @@
       .navbar-brand= link_to "New Suit", new_suit_path
     .col-xs-3.col-sm-3
       - if user_signed_in?
-        .navbar-brand= link_to "Sinf Out", destroy_user_session_path, :method => :delete
+        .navbar-brand= link_to "Sign Out", destroy_user_session_path, :method => :delete
       - else
         .navbar-brand= link_to "Sign Up", new_user_registration_path

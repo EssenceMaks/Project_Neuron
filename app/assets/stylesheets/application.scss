@@ -140,7 +140,9 @@
 	overflow: auto;
 	border-radius: 5px;
 }
-
+		.suit_text ::-webkit-scrollbar-thumb {
+			display: none;
+		}
 .tit_desc_img_block {
 }
 	    .btn_back {

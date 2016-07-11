@@ -27,7 +27,7 @@
             .skill_show
               %h5 skill list
               %ul
-                = su.my_skills.each do |t|
+                - su.my_skills.each do |t|
                   %li= t.skill.upcase
           .col-xs-3.col-md-3
             %h5 Projects and Dignity
@@ -39,4 +39,3 @@
                     %li= skill.skill 
   .col-xs-1.col-md-1
     
-
