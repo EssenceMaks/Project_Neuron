@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users
   resources :suits
+  resources :souls, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
+
   
 
   root "suits#index"
+  get 'suitreview', to: 'suits#suitreview'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -15,7 +15,8 @@
   .mainnavigation
     .col-xs-3.col-sm-3
       - if user_signed_in?
-        .navbar-brand= link_to "Home (in progress)", root_path
+        .navbar-brand= link_to "Home", souls_path(current_user)
+        %h6= current_user.soul.name
       - else
         .navbar-brand= link_to "Sign in", new_user_session_path
     .col-xs-3.col-sm-3

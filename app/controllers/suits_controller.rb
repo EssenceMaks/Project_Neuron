@@ -1,12 +1,22 @@
 class SuitsController < ApplicationController
 	before_action :find_suit, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :find_soul, only: [:show]
+	before_action :authenticate_user!, except: [:index, :show, :suitreview]
 	
 	def index
 		@suit = Suit.all.order("created_at DESC")
+		#@soul = Soul.find(params[:id])
+	end
+
+	def suitreview
+		@suit = Suit.all.order("created_at DESC")
+		#@soul = Soul.find(params[:id])
+		#@suit = Suit.find(params[:id])
 	end
 
 	def show
+		#@soul = Soul.all.order("created_at DESC")
+		@age = Time.now
 		
 	end
 
@@ -29,7 +39,7 @@ class SuitsController < ApplicationController
 	def edit
 		
 	end
-
+	
 	def update
 		if @suit.update(suit_params)
 			redirect_to @suit
@@ -52,5 +62,9 @@ class SuitsController < ApplicationController
 
 		def find_suit
 			@suit = Suit.find(params[:id])
+		end
+
+		def find_soul
+			@soul = Soul.find(params[:id])			
 		end
 end

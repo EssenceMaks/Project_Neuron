@@ -76,6 +76,35 @@
 	text-align: center;
 }
 
+#user_sosial_networks {
+	display: inline-block;
+}
+
+.sosial_logo_suit_show_page {
+	width: 80px;
+	height: 80px;
+	margin: -5px;
+}
+	/*
+	.sosial_logo_suit_show_page_transform:focus {
+
+		background-color: transparent;
+	}
+	*/
+
+.sosial_logo_suit_show_page_transform {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 35px;
+	height: 70px;
+	width: 70px
+}
+.sosial_logo_suit_show_page_transform:hover {
+	background-color: red;
+	border-radius: 25px;
+}
+
 /* Show all suits page*/
 
 .suit_body {

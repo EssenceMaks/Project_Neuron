@@ -4,15 +4,37 @@
       = link_to(image_tag(@suit.image.url , :title => "Back to Welcome Page", :class => "suit_foto"), root_path)
   .col-sm-4
     #user_suit_name
-      %h4= @suit.title
-      %p= @suit.description
+      %h3= @soul.name + " " + @soul.surname
+      %h4= @soul.nickname
+      %h4 Age: #{@age.year - @soul.born.year}
+      %h4 City: #{@soul.city}
+      
+      
+
   .col-sm-3
     #user_mobile_number
-      %h2 SOME NUMBER
+      %h2= @soul.mob_number
+      %p= @suit.user.email
+      %p mail-me function
   .col-sm-3
     #user_sosial_networks
-      %h2 horizontal ul list of sosial networks
-      %p= @suit.user.email
+      /%h4= @soul.linkid
+      .sosial_logo_suit_show_page_transform
+        = link_to image_tag( 'in.png', :class => 'sosial_logo_suit_show_page' ), @soul.linkid, target: '_blank'#, class: 'sosial_logo_suit_show_page_tr'
+      .sosial_logo_suit_show_page_transform
+        = link_to image_tag( 'github.png', :class => 'sosial_logo_suit_show_page' ), @soul.github, target: '_blank'#, class: 'sosial_logo_suit_show_page_tr'
+      .sosial_logo_suit_show_page_transform
+        = link_to image_tag( 'fb.png', :class => 'sosial_logo_suit_show_page' ), @soul.facebook, target: '_blank'#, class: 'sosial_logo_suit_show_page_tr'
+      .sosial_logo_suit_show_page_transform
+        = link_to image_tag( 'skype.png', :class => 'sosial_logo_suit_show_page' ), @soul.facebook, target: '_blank', title: @soul.skype, data: { confirm: @soul.skype }#, class: 'sosial_logo_suit_show_page_tr'
+      /%h4= @soul.github
+      /= link_to image_tag( 'github.png'), @soul.github
+      /%h4= @soul.facebook
+      /= link_to image_tag( 'fb.png'), @soul.facebook
+      /%h4= @soul.skype
+      /= link_to image_tag( 'skype.png'), @soul.skype
+      /<a href=@soul.Facebook, target="_blank" class=" div1"><%= image_tag("fb.png", :title => "My Facebook", :class => "ava1")%><span class="name"></span></a></li>
+
 
 .suit_text
   .col-sm-1

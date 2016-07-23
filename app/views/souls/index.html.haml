@@ -1,0 +1,10 @@
+%h1 this is the face of user, like a person status
+
+%h2= @soul.name
+%h2= @soul.mob_number
+%h2= @soul.facebook
+%h2= @soul.github
+%h2= @soul.linkid
+%h2= @soul.nickname
+
+= link_to "edit", edit_soul_path(current_user), class: "btn btn-default btn_bottom_back"

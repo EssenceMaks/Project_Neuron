@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :suits
+  has_one :soul
+  before_create :build_soul #-> saves blank associated "Profile" object after user create
 end
