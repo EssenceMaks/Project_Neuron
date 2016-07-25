@@ -1,21 +1,21 @@
 class SuitsController < ApplicationController
 	before_action :find_suit, only: [:show, :edit, :update, :destroy]
 	before_action :find_soul, only: [:show]
-	before_action :authenticate_user!, except: [:index, :show, :suitreview]
+	before_action :authenticate_user!, except: [:index, :show, :user_suits]
 	
 	def index
 		@suit = Suit.all.order("created_at DESC")
 		#@soul = Soul.find(params[:id])
 	end
 
-	def suitreview
-		@suit = Suit.all.order("created_at DESC")
+	def user_suits
+		@suit = current_user.suits.all.order("created_at DESC")
 		#@soul = Soul.find(params[:id])
 		#@suit = Suit.find(params[:id])
 	end
 
 	def show
-		#@soul = Soul.all.order("created_at DESC")
+		#@souls = Soul.all.order("created_at DESC")
 		@age = Time.now
 		
 	end

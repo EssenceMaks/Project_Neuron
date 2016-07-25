@@ -1,0 +1,15 @@
+.suit_text
+  %h1 HOME PAGE
+  %h2= @soul.nickname
+  %h2= @soul.nickname
+  %br
+  = link_to "Cabinet", cabinet_path, class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "Organizer in progress", organizer_path, class: "btn btn-default btn_bottom_back"
+  %h2= @soul.name
+  %h2= @soul.born
+  %h2= @soul.surname
+
+
+  = link_to "edit", edit_soul_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br

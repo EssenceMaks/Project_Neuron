@@ -1,11 +1,23 @@
 class SoulsController < ApplicationController
 	before_action :find_soul, only: [:show, :edit, :update]
-	before_action :authenticate_user!, except: [:show, :index]
+	before_action :authenticate_user!, except: [:show]
 
 	def index # your own page and for admin in future
 		#@suit = Soul.all.order("created_at DESC")
 		@soul = current_user.soul
 
+	end
+
+	def home
+		@soul = current_user.soul
+	end
+
+	def cabinet
+		
+	end
+
+	def organizer
+		
 	end
 
 	def show # current user soul page

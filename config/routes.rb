@@ -2,13 +2,17 @@ Rails.application.routes.draw do
   
 
   devise_for :users
-  resources :suits
-  resources :souls, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
+  resources :suits#, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
+  resources :souls#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
 
   
 
   root "suits#index"
-  get 'suitreview', to: 'suits#suitreview'
+  get 'user_suits', to: 'suits#user_suits'
+
+  get 'home', to: 'souls#home'
+  get 'cabinet', to: 'souls#cabinet'
+  get 'organizer', to: 'souls#organizer'
 
 
 
