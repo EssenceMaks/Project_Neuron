@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :suits#, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
-  resources :souls#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
-
-  
+  resources :souls do#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
+    resources :projects
+  end
 
   root "suits#index"
   get 'user_suits', to: 'suits#user_suits'

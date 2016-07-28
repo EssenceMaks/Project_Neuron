@@ -1,0 +1,16 @@
+.suit_text
+  %h1 this is the face of user, like a person status
+  %h2= @project.name
+  %h2= @project.description
+  %h2= @project.url
+  %h2= @project.team
+  %h2= @project.client
+  %h1 this is Soul info
+  %h2= @soul.mob_number
+  %h2= @soul.facebook
+  %h2= @soul.github
+  %h2= @soul.linkid
+  %h2= @soul.skype
+  %h2= @soul.history
+  - if @soul.user == current_user
+    = link_to "edit", edit_soul_path, class: "btn btn-default btn_bottom_back"
