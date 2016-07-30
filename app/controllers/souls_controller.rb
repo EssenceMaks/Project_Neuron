@@ -22,6 +22,7 @@ class SoulsController < ApplicationController
 
 	def show # current user soul page
 		@soul = Soul.find(params[:id])
+		@projects = Project.where(soul_id: @soul).order("created_at DESC")
 	end
 
 	def page # your own page

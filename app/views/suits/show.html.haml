@@ -59,6 +59,23 @@
       %ul
         - @suit.additional_educations.each do |additional_education|
           %li= additional_education.academy 
+    .body_project_show
+      .col-xs-1.col-md-1
+
+      .col-xs-10.col-md-10
+        - @projects.each do |proj|
+          .user_plate
+            .col-xs-3.col-md-3
+              .suit
+                .suits_fotos
+                  %h2= link_to proj.name, soul_project_path(@soul, proj)
+                  %h2= truncate(proj.description, length: 5)
+            .col-xs-3.col-md-3
+            .col-xs-3.col-md-3
+            .col-xs-3.col-md-3
+
+
+    .col-xs-1.col-md-1
 
   .col-sm-1
     <br>

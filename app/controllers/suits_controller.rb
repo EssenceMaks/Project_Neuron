@@ -17,7 +17,7 @@ class SuitsController < ApplicationController
 	def show
 		#@souls = Soul.all.order("created_at DESC")
 		@age = Time.now
-		
+		@projects = Project.where(soul_id: @soul).order("created_at DESC")
 	end
 
 	def new

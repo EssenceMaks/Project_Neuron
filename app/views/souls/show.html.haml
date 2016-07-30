@@ -13,3 +13,20 @@
   %h2= @soul.history
   - if @soul.user == current_user
     = link_to "edit", edit_soul_path, class: "btn btn-default btn_bottom_back"
+
+  .body_project_show
+    .col-xs-1.col-md-1
+
+    .col-xs-10.col-md-10
+      - @projects.each do |proj|
+        .user_plate
+          .col-xs-3.col-md-3
+            .suit
+              .suits_fotos
+                %h2= link_to proj.name, soul_project_path(@soul, proj)
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+
+
+    .col-xs-1.col-md-1
