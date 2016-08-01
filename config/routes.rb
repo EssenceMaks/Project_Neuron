@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   resources :suits#, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
   resources :souls do#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
     resources :projects
+    resources :purposes
+    resources :quotations
+    resources :articles
+    resources :experiences
+    resources :wishes
+    resources :hobbies
   end
 
   root "suits#index"

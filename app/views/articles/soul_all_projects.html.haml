@@ -1,0 +1,16 @@
+.body_suits_show
+  .col-xs-1.col-md-1
+
+  .col-xs-10.col-md-10
+    - @projects.each do |project|
+      .user_plate
+          .col-xs-3.col-md-3
+            .suit
+              .suits_fotos
+                  %h2= link_to project.title, soul_project_path(@soul, @project)
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+
+
+  .col-xs-1.col-md-1

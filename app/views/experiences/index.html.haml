@@ -1,0 +1,17 @@
+.body_suits_show
+  .col-xs-1.col-md-1
+    %br
+    = link_to "new", new_soul_project_path, class: "btn btn-default btn_bottom_back"
+  .col-xs-10.col-md-10
+    - @projects.each do |proj|
+      .user_plate
+        .col-xs-3.col-md-3
+          .suit
+            .suits_fotos
+              %h2= link_to proj.name, soul_project_path(@soul, proj)#(@projects, @soul)
+        .col-xs-3.col-md-3
+        .col-xs-3.col-md-3
+        .col-xs-3.col-md-3
+
+
+  .col-xs-1.col-md-1
