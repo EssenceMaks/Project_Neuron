@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  url: MyString
+  hobbiescategory_id: 1
+  soul_id: 
+
+two:
+  title: MyString
+  description: MyText
+  url: MyString
+  hobbiescategory_id: 1
+  soul_id: 

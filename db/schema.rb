@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726002937) do
+ActiveRecord::Schema.define(version: 20160801063758) do
 
   create_table "additional_educations", force: :cascade do |t|
     t.text     "academy"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20160726002937) do
 
   add_index "additional_educations", ["suit_id"], name: "index_additional_educations_on_suit_id"
 
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "articlecategory_id"
+    t.integer  "soul_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "articles", ["soul_id"], name: "index_articles_on_soul_id"
+
   create_table "educations", force: :cascade do |t|
     t.text     "college"
     t.integer  "suit_id"
@@ -30,6 +42,32 @@ ActiveRecord::Schema.define(version: 20160726002937) do
   end
 
   add_index "educations", ["suit_id"], name: "index_educations_on_suit_id"
+
+  create_table "experiences", force: :cascade do |t|
+    t.date     "startdate"
+    t.string   "datecomment"
+    t.date     "enddate"
+    t.string   "title"
+    t.text     "description"
+    t.string   "workplaceurl"
+    t.integer  "soul_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "experiences", ["soul_id"], name: "index_experiences_on_soul_id"
+
+  create_table "hobbies", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "hobbiescategory_id"
+    t.integer  "soul_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "hobbies", ["soul_id"], name: "index_hobbies_on_soul_id"
 
   create_table "interested_ins", force: :cascade do |t|
     t.string   "futureskill"
@@ -61,6 +99,30 @@ ActiveRecord::Schema.define(version: 20160726002937) do
   end
 
   add_index "projects", ["soul_id"], name: "index_projects_on_soul_id"
+
+  create_table "purposes", force: :cascade do |t|
+    t.string   "purport"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "soul_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "purposes", ["soul_id"], name: "index_purposes_on_soul_id"
+
+  create_table "quotations", force: :cascade do |t|
+    t.string   "author"
+    t.text     "proverb"
+    t.text     "description"
+    t.string   "datecomment"
+    t.date     "created"
+    t.integer  "soul_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "quotations", ["soul_id"], name: "index_quotations_on_soul_id"
 
   create_table "souls", force: :cascade do |t|
     t.string   "name"
@@ -108,5 +170,17 @@ ActiveRecord::Schema.define(version: 20160726002937) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "wishes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "url"
+    t.integer  "wishescategory_id"
+    t.integer  "soul_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "wishes", ["soul_id"], name: "index_wishes_on_soul_id"
 
 end

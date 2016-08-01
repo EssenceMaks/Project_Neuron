@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  purport: MyString
+  description: MyText
+  url: MyString
+  soul_id: 
+
+two:
+  purport: MyString
+  description: MyText
+  url: MyString
+  soul_id: 

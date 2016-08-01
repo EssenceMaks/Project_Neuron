@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  author: MyString
+  proverb: MyText
+  description: MyText
+  datecomment: MyString
+  created: 2016-08-01
+  soul_id: 
+
+two:
+  author: MyString
+  proverb: MyText
+  description: MyText
+  datecomment: MyString
+  created: 2016-08-01
+  soul_id: 
