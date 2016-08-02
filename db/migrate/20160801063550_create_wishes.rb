@@ -9,6 +9,5 @@ class CreateWishes < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :wishes, :soul
   end
 end

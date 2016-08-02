@@ -9,6 +9,5 @@ class CreateArticles < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :articles, :soul
   end
 end

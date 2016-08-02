@@ -9,6 +9,5 @@ class CreateHobbies < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :hobbies, :soul
   end
 end

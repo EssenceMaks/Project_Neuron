@@ -10,6 +10,5 @@ class CreateQuotations < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :quotations, :soul
   end
 end
