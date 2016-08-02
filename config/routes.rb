@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   #, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
   resources :souls do#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
-    resources :suits
+    resources :resumes
     resources :projects
     resources :purposes
     resources :quotations

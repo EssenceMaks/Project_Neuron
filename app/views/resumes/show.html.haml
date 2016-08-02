@@ -1,0 +1,29 @@
+.suit_text
+  %h1 this is the face of user, like a person status
+  %h2= @resume.suitname
+  %br
+  %h3= link_to @soul.name, soul_path(@soul)
+  %br
+  = link_to "new", new_soul_resume_path, class: "btn btn-default btn_bottom_back"
+  = link_to "delete", soul_resume_path(@soul, @resume), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
+
+  .body_resume_show
+    .col-xs-1.col-md-1
+
+    .col-xs-10.col-md-10
+      - @resumes.each do |res|
+        .user_plate
+          .col-xs-3.col-md-3
+            .suit
+              .suits_fotos
+                %h2= link_to res.suitname, soul_resume_path(@soul, res)
+                %h2= truncate(res.suitdescription, length: 5)
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+
+
+    .col-xs-1.col-md-1
+
+  - if @soul.user == current_user
+    = link_to "edit", edit_soul_resume_path, class: "btn btn-default btn_bottom_back"

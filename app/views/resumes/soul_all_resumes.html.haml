@@ -1,0 +1,16 @@
+.body_suits_show
+  .col-xs-1.col-md-1
+
+  .col-xs-10.col-md-10
+    - @resumes.each do |res|
+      .user_plate
+          .col-xs-3.col-md-3
+            .suit
+              .suits_fotos
+                  %h2= link_to res.suitname, soul_resume_path(@soul, @res)
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+          .col-xs-3.col-md-3
+
+
+  .col-xs-1.col-md-1
