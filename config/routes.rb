@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   
 
   devise_for :users
-  resources :suits#, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
+  #, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
   resources :souls do#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
+    resources :suits
     resources :projects
     resources :purposes
     resources :quotations

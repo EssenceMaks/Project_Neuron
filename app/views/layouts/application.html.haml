@@ -22,7 +22,7 @@
     .col-xs-3.col-sm-3
       .navbar-brand= link_to "Suits", root_path
     .col-xs-3.col-sm-3
-      .navbar-brand= link_to "New Suit", new_suit_path
+      .navbar-brand= link_to "New Suit"#, new_suit_path
     .col-xs-3.col-sm-3
       - if user_signed_in?
         .navbar-brand= link_to "Sign Out", destroy_user_session_path, :method => :delete

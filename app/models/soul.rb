@@ -1,5 +1,6 @@
 class Soul < ActiveRecord::Base
 	belongs_to :user
+	has_many :resumes
 	has_many :projects
 	has_many :purposes
 	has_many :quotations

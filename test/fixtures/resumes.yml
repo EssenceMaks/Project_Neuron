@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  suitname: MyString
+  suitdescription: MyText
+  workmail: MyString
+  onlineswitch: false
+  suitcategory_id: 1
+  soul_id: 
+
+two:
+  suitname: MyString
+  suitdescription: MyText
+  workmail: MyString
+  onlineswitch: false
+  suitcategory_id: 1
+  soul_id: 
