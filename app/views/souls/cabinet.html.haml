@@ -2,4 +2,18 @@
   %h1 Cabinet PAGE 
   = link_to "Information of my Soul", souls_path(current_user), class: "btn btn-default btn_bottom_back"
   %br
-  = link_to "My Suits", user_suits_path, class: "btn btn-default btn_bottom_back"
+  = link_to "My Suits", user_suits_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "My Projects", soul_projects_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "My Purposes", soul_purposes_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "My Experience", soul_experiences_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "My Wishes", soul_wishes_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "My Hobbies", soul_hobbies_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "My Quotation", soul_quotations_path(current_user), class: "btn btn-default btn_bottom_back"
+  %br
+  = link_to "My Articles", soul_articles_path(current_user), class: "btn btn-default btn_bottom_back"

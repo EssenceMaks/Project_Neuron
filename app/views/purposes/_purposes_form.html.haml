@@ -1,0 +1,27 @@
+.suit_text
+  .col-xs-1.col-md-1
+    .btn_back
+    = link_to "Back", root_path, class: "btn btn-default"
+  .col-xs-10.col-md-10
+    .tit_desc_img_block
+      = simple_form_for ([@soul, @purpose]), html: { multipart: true } do |f|
+        - if @soul.errors.any?
+          #errors
+            %p
+              = @purpose.errors.count
+              Prevented this purpose froms saving
+            %ul
+              - @purpose.errors.full_messages.each do |msg|
+                %li= msg
+        .panel-body
+          = f.input :purport, label: 'purpose Name', input_html: { title: "NAME of your purpose", class: 'form-control'}
+          = f.input :description, label: 'purpose description', input_html: { class: 'form-control'}
+          = f.input :url, label: 'Link', input_html: { title: "NAME of your purpose", class: 'form-control'}
+
+   
+        .sub_button
+          = f.button :submit, class: "btn btn-primary sub_button"
+        .btn_bottom_back
+          = link_to "Back", root_path, class: "btn btn-default btn_bottom_back"
+  .col-xs-1.col-md-1
+  %br

@@ -1,0 +1,25 @@
+.suit_text
+  .col-xs-1.col-md-1
+    .btn_back
+    = link_to "Back", root_path, class: "btn btn-default"
+  .col-xs-10.col-md-10
+    .tit_desc_img_block
+      = simple_form_for ([@soul, @article]), html: { multipart: true } do |f|
+        - if @soul.errors.any?
+          #errors
+            %p
+              = @article.errors.count
+              Prevented this article froms saving
+            %ul
+              - @article.errors.full_messages.each do |msg|
+                %li= msg
+        .panel-body
+          = f.input :title, label: 'article Name', input_html: { title: "NAME of your article", class: 'form-control'}
+          = f.input :description, label: 'article description', input_html: { class: 'form-control'}
+          = f.input :url, label: 'Link', input_html: { title: "NAME of your article", class: 'form-control'}
+        .sub_button
+          = f.button :submit, class: "btn btn-primary sub_button"
+        .btn_bottom_back
+          = link_to "Back", root_path, class: "btn btn-default btn_bottom_back"
+  .col-xs-1.col-md-1
+  %br

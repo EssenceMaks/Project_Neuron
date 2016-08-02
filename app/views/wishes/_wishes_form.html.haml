@@ -1,0 +1,26 @@
+.suit_text
+  .col-xs-1.col-md-1
+    .btn_back
+    = link_to "Back", root_path, class: "btn btn-default"
+  .col-xs-10.col-md-10
+    .tit_desc_img_block
+      = simple_form_for ([@soul, @wish]), html: { multipart: true } do |f|
+        - if @soul.errors.any?
+          #errors
+            %p
+              = @wish.errors.count
+              Prevented this wish froms saving
+            %ul
+              - @wish.errors.full_messages.each do |msg|
+                %li= msg
+        .panel-body
+          = f.input :title, label: 'wish Name', input_html: { title: "NAME of your wish", class: 'form-control'}
+          = f.input :description, label: 'wish description', input_html: { class: 'form-control'}
+          = f.input :url, label: 'Link', input_html: { title: "NAME of your wish", class: 'form-control'}
+   
+        .sub_button
+          = f.button :submit, class: "btn btn-primary sub_button"
+        .btn_bottom_back
+          = link_to "Back", root_path, class: "btn btn-default btn_bottom_back"
+  .col-xs-1.col-md-1
+  %br

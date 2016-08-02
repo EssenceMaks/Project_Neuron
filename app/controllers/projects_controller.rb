@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
 
 	def destroy
 		@project.destroy
-		redirect_to soul_projects_path(@soul)
+		redirect_to soul_projects_path
 	end
 
 

@@ -1,23 +1,23 @@
 .suit_text
   %h1 this is the face of user, like a person status
-  %h2= @project.name
+  %h2= @article.title
   %br
   %h3= link_to @soul.name, soul_path(@soul)
   %br
-  = link_to "new", new_soul_project_path, class: "btn btn-default btn_bottom_back"
-  = link_to "delete", soul_project_path(@soul, @projects), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
+  = link_to "new", new_soul_article_path, class: "btn btn-default btn_bottom_back"
+  = link_to "delete", soul_article_path(@soul, @article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
 
-  .body_project_show
+  .body_article_show
     .col-xs-1.col-md-1
 
     .col-xs-10.col-md-10
-      - @projects.each do |proj|
+      - @articles.each do |art|
         .user_plate
           .col-xs-3.col-md-3
             .suit
               .suits_fotos
-                %h2= link_to proj.name, soul_project_path(@soul, proj)
-                %h2= truncate(proj.description, length: 5)
+                %h2= link_to art.title, soul_article_path(@soul, art)
+                %h2= truncate(art.description, length: 5)
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
@@ -26,4 +26,4 @@
     .col-xs-1.col-md-1
 
   - if @soul.user == current_user
-    = link_to "edit", edit_soul_project_path, class: "btn btn-default btn_bottom_back"
+    = link_to "edit", edit_soul_article_path, class: "btn btn-default btn_bottom_back"

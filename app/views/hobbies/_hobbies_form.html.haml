@@ -1,0 +1,26 @@
+.suit_text
+  .col-xs-1.col-md-1
+    .btn_back
+    = link_to "Back", root_path, class: "btn btn-default"
+  .col-xs-10.col-md-10
+    .tit_desc_img_block
+      = simple_form_for ([@soul, @hobby]), html: { multipart: true } do |f|
+        - if @soul.errors.any?
+          #errors
+            %p
+              = @hobby.errors.count
+              Prevented this hobby froms saving
+            %ul
+              - @hobby.errors.full_messages.each do |msg|
+                %li= msg
+        .panel-body
+          = f.input :title, label: 'hobby Name', input_html: { title: "NAME of your hobby", class: 'form-control'}
+          = f.input :description, label: 'hobby description', input_html: { class: 'form-control'}
+          = f.input :url, label: 'Link', input_html: { title: "NAME of your hobby", class: 'form-control'}
+   
+        .sub_button
+          = f.button :submit, class: "btn btn-primary sub_button"
+        .btn_bottom_back
+          = link_to "Back", root_path, class: "btn btn-default btn_bottom_back"
+  .col-xs-1.col-md-1
+  %br

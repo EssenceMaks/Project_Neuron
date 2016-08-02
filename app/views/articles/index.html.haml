@@ -1,14 +1,14 @@
 .body_suits_show
   .col-xs-1.col-md-1
     %br
-    = link_to "new", new_soul_project_path, class: "btn btn-default btn_bottom_back"
+    = link_to "new", new_soul_article_path, class: "btn btn-default btn_bottom_back"
   .col-xs-10.col-md-10
-    - @projects.each do |proj|
+    - @articles.each do |art|
       .user_plate
         .col-xs-3.col-md-3
           .suit
             .suits_fotos
-              %h2= link_to proj.name, soul_project_path(@soul, proj)#(@projects, @soul)
+              %h2= link_to art.name, soul_article_path(@soul, art)
         .col-xs-3.col-md-3
         .col-xs-3.col-md-3
         .col-xs-3.col-md-3

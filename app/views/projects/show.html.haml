@@ -5,7 +5,7 @@
   %h3= link_to @soul.name, soul_path(@soul)
   %br
   = link_to "new", new_soul_project_path, class: "btn btn-default btn_bottom_back"
-  = link_to "delete", soul_project_path(@soul, @projects), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
+  = link_to "delete", soul_project_path(@soul, @project), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
 
   .body_project_show
     .col-xs-1.col-md-1

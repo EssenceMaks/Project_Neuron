@@ -2,12 +2,12 @@
   .col-xs-1.col-md-1
 
   .col-xs-10.col-md-10
-    - @projects.each do |project|
+    - @experiences.each do |exp|
       .user_plate
           .col-xs-3.col-md-3
             .suit
               .suits_fotos
-                  %h2= link_to project.title, soul_project_path(@soul, @project)
+                  %h2= link_to exp.title, soul_experience_path(@soul, @exp)
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3

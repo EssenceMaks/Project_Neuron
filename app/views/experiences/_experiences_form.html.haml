@@ -1,0 +1,29 @@
+.suit_text
+  .col-xs-1.col-md-1
+    .btn_back
+    = link_to "Back", root_path, class: "btn btn-default"
+  .col-xs-10.col-md-10
+    .tit_desc_img_block
+      = simple_form_for ([@soul, @experience]), html: { multipart: true } do |f|
+        - if @soul.errors.any?
+          #errors
+            %p
+              = @experience.errors.count
+              Prevented this experience froms saving
+            %ul
+              - @experience.errors.full_messages.each do |msg|
+                %li= msg
+        .panel-body
+          = f.input :startdate, label: 'experience Team', input_html: { class: 'form-control'}
+          = f.input :datecomment, label: 'experience Customer', input_html: { title: "NAME of your experience", class: 'form-control'}
+          = f.input :enddate, label: 'experience Customer', input_html: { title: "NAME of your experience", class: 'form-control'}
+          = f.input :title, label: 'experience Name', input_html: { title: "NAME of your experience", class: 'form-control'}
+          = f.input :description, label: 'experience description', input_html: { class: 'form-control'}
+          = f.input :workplaceurl, label: 'Link', input_html: { title: "NAME of your experience", class: 'form-control'}
+
+        .sub_button
+          = f.button :submit, class: "btn btn-primary sub_button"
+        .btn_bottom_back
+          = link_to "Back", root_path, class: "btn btn-default btn_bottom_back"
+  .col-xs-1.col-md-1
+  %br
