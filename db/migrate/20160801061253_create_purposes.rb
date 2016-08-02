@@ -8,6 +8,6 @@ class CreatePurposes < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :purposes, :souls
+    add_foreign_key :purposes, :soul
   end
 end
