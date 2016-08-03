@@ -1,3 +1,3 @@
 class InterestedIn < ActiveRecord::Base
-  belongs_to :suit
+  belongs_to :resume
 end

@@ -30,6 +30,32 @@
       /<a href=@soul.Facebook, target="_blank" class=" div1"><%= image_tag("fb.png", :title => "My Facebook", :class => "ava1")%><span class="name"></span></a></li>
 
 .suit_text
+  .col-sm-1
+  .col-sm-10
+    
+    #Technologies_I_work_with:
+      %h3 Technologies I work with:
+      %ul
+        - @resume.my_skills.each do |skill|
+          %li= skill.skill 
+
+    #Interested_in:
+      %h3 Interested in:
+      %ul
+        - @resume.interested_ins.each do |interested_in|
+          %li= interested_in.futureskill
+
+    #Education:
+      %h3 Education:
+      %ul
+        - @resume.educations.each do |education|
+          %li= education.college
+
+    #Additional_education:
+      %h3 Additional education:
+      %ul
+        - @resume.additional_educations.each do |additional_education|
+          %li= additional_education.academy 
   %h1 this is the face of user, like a person status
   %h2= @resume.suitname
   %br

@@ -51,7 +51,10 @@ class ResumesController < ApplicationController
 	private
 
 	def resume_params
-		params.require(:resume).permit(:suitname, :suitdescription, :workmail, :onlineswitch, :imgresume)
+		params.require(:resume).permit(:suitname, :suitdescription, :workmail, :onlineswitch, :imgresume, my_skills_attributes: [:id, :skill, :_destroy], 
+				interested_ins_attributes: [:id, :futureskill, :_destroy], educations_attributes: [:id, :college, :_destroy], 
+				additional_educations_attributes: [:id, :academy, :_destroy], reasons_attributes: [:id, :reason, :_destroy], 
+				workobjectives_attributes: [:id, :objective, :_destroy])
 	end
 
 	def find_soul
