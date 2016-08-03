@@ -1,6 +1,6 @@
 class ResumesController < ApplicationController
 	before_action :find_soul, except: [:all_resumes]
-	before_action :find_resume, only: [:show, :edit, :update, :destroy, ]
+	before_action :find_resume, only: [:show, :edit, :update, :destroy ]
 
 	def all_resumes
 		@suit = Resume.all.order("created_at DESC")

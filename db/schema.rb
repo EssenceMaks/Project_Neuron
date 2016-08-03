@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(version: 20160803090351) do
 
   create_table "additional_educations", force: :cascade do |t|
     t.text     "academy"
-    t.integer  "suit_id"
+    t.integer  "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "additional_educations", ["suit_id"], name: "index_additional_educations_on_suit_id"
+  add_index "additional_educations", ["resume_id"], name: "index_additional_educations_on_resume_id"
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(version: 20160803090351) do
 
   create_table "educations", force: :cascade do |t|
     t.text     "college"
-    t.integer  "suit_id"
+    t.integer  "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "educations", ["suit_id"], name: "index_educations_on_suit_id"
+  add_index "educations", ["resume_id"], name: "index_educations_on_resume_id"
 
   create_table "experiencelists", force: :cascade do |t|
     t.text     "exp_mark"
@@ -97,21 +97,21 @@ ActiveRecord::Schema.define(version: 20160803090351) do
 
   create_table "interested_ins", force: :cascade do |t|
     t.string   "futureskill"
-    t.integer  "suit_id"
+    t.integer  "resume_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "interested_ins", ["suit_id"], name: "index_interested_ins_on_suit_id"
+  add_index "interested_ins", ["resume_id"], name: "index_interested_ins_on_resume_id"
 
   create_table "my_skills", force: :cascade do |t|
     t.string   "skill"
-    t.integer  "suit_id"
+    t.integer  "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "my_skills", ["suit_id"], name: "index_my_skills_on_suit_id"
+  add_index "my_skills", ["resume_id"], name: "index_my_skills_on_resume_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"

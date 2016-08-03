@@ -50,7 +50,8 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-		params.require(:project).permit(:name, :description, :url, :team, :client, :imgproject)
+		params.require(:project).permit(:name, :description, :url, :team, :client, :imgproject, 
+				projectteams_attributes: [:id, :team, :_destroy])
 	end
 
 	def find_soul

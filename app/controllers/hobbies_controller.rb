@@ -49,7 +49,8 @@ class HobbiesController < ApplicationController
 	private
 
 	def hobby_params
-		params.require(:hobby).permit(:title, :description, :url, :imghobby)
+		params.require(:hobby).permit(:title, :description, :url, :imghobby, 
+				hobbylists_attributes: [:id, :hob_mark, :_destroy])
 	end
 
 	def find_soul

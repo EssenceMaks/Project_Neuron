@@ -56,6 +56,21 @@
       %ul
         - @resume.additional_educations.each do |additional_education|
           %li= additional_education.academy 
+
+    #Additional_education:
+      %h3 Work objectives:
+      %ul
+        - @resume.workobjectives.each do |workobjective|
+          %li= workobjective.objective 
+
+    #Additional_education:
+      %h3 Reasons:
+      %ul
+        - @resume.reasons.each do |reas|
+          %li= reas.reason 
+  .col-sm-1
+
+  %br
   %h1 this is the face of user, like a person status
   %h2= @resume.suitname
   %br

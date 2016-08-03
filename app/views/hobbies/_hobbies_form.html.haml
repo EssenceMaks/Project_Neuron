@@ -18,6 +18,14 @@
           = f.input :description, label: 'hobby description', input_html: { class: 'form-control'}
           = f.input :url, label: 'Link', input_html: { title: "NAME of your hobby", class: 'form-control'}
           = f.input :imghobby, label: 'Attach an image that will be in this hobby', input_html: { class: 'form-control'}
+        .edu_addi_reaso
+          .col-xs-12.col-md-12
+            %h3 Some list:
+            #additional_educations
+              = f.simple_fields_for :hobbylists do |hobbylist|
+                = render 'hobbylist_fields', f: hobbylist
+              .links
+                = link_to_add_association 'Add ', f, :hobbylists, class: "btn btn-default add-button"  
         .sub_button
           = f.button :submit, class: "btn btn-primary sub_button"
         .btn_bottom_back

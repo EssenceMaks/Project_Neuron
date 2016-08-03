@@ -49,7 +49,8 @@ class ExperiencesController < ApplicationController
 	private
 
 	def experience_params
-		params.require(:experience).permit(:startdate, :datecomment, :enddate, :title, :description, :workplaceurl)
+		params.require(:experience).permit(:startdate, :datecomment, :enddate, :title, :description,
+		 :workplaceurl, experiencelists_attributes: [:id, :exp_mark, :_destroy])
 	end
 
 	def find_soul

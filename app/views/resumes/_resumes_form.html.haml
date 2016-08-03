@@ -54,6 +54,24 @@
                   = render 'additional_education_fields', f: additional_education
                 .links
                   = link_to_add_association 'Add academy', f, :additional_educations, class: "btn btn-default add-button"
+          
+          .edu_addi_reaso
+            .col-xs-12.col-md-12
+              %h3 Youre Work Objectives:
+              #additional_educations
+                = f.simple_fields_for :workobjectives do |workobjective|
+                  = render 'workobjective_fields', f: workobjective
+                .links
+                  = link_to_add_association 'Add objective', f, :workobjectives, class: "btn btn-default add-button"
+          
+          .edu_addi_reaso
+            .col-xs-12.col-md-12
+              %h3 Resons:
+              #additional_educations
+                = f.simple_fields_for :reasons do |reason|
+                  = render 'reason_fields', f: reason
+                .links
+                  = link_to_add_association 'Add reason', f, :reasons, class: "btn btn-default add-button"
 
         .sub_button
           = f.button :submit, class: "btn btn-primary sub_button"
