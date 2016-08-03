@@ -1,9 +1,11 @@
 class ResumesController < ApplicationController
-	before_action :find_soul
-	before_action :find_resume, only: [:show, :edit, :update, :destroy]
+	before_action :find_soul, except: [:all_resumes]
+	before_action :find_resume, only: [:show, :edit, :update, :destroy, ]
 
-	def soul_all_resumes
-
+	def all_resumes
+		@suit = Resume.all.order("created_at DESC")
+		#@souls = @suit.resumes.find(params[:id])Resume.find_by(soul_id: params[:soul_id])
+	    #@soul = Soul.find(params[:soul_id])
 	end
 
 	def index
@@ -25,7 +27,7 @@ class ResumesController < ApplicationController
 
 	def show
 		@resumes = Resume.where(soul_id: @soul).order("created_at DESC")  
-		
+		@age = Time.now
 	end
 
 	def edit
@@ -49,7 +51,7 @@ class ResumesController < ApplicationController
 	private
 
 	def resume_params
-		params.require(:resume).permit(:suitname, :suitdescription, :workmail, :onlineswitch)
+		params.require(:resume).permit(:suitname, :suitdescription, :workmail, :onlineswitch, :imgresume)
 	end
 
 	def find_soul

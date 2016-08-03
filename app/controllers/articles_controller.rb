@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
 	private
 
 	def article_params
-		params.require(:article).permit(:title, :description, :url)
+		params.require(:article).permit(:title, :description, :url, :imgarticle)
 	end
 
 	def find_soul

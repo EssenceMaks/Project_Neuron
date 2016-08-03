@@ -67,7 +67,7 @@ class SoulsController < ApplicationController
 		def soul_params
 			params.require(:soul).permit(:name, :surname, :nickname,
 			 :born, :city, :mob_number, :facebook, :github, :linkid,
-			  :skype, :history)
+			  :skype, :history, :imgsoul)
 		end
 
 		def find_soul

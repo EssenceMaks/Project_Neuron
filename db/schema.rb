@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802121844) do
+ActiveRecord::Schema.define(version: 20160803023121) do
 
   create_table "additional_educations", force: :cascade do |t|
     t.text     "academy"
@@ -28,8 +28,12 @@ ActiveRecord::Schema.define(version: 20160802121844) do
     t.string   "url"
     t.integer  "articlecategory_id"
     t.integer  "soul_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "imgarticle_file_name"
+    t.string   "imgarticle_content_type"
+    t.integer  "imgarticle_file_size"
+    t.datetime "imgarticle_updated_at"
   end
 
   add_index "articles", ["soul_id"], name: "index_articles_on_soul_id"
@@ -63,8 +67,12 @@ ActiveRecord::Schema.define(version: 20160802121844) do
     t.string   "url"
     t.integer  "hobbiescategory_id"
     t.integer  "soul_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "imghobby_file_name"
+    t.string   "imghobby_content_type"
+    t.integer  "imghobby_file_size"
+    t.datetime "imghobby_updated_at"
   end
 
   add_index "hobbies", ["soul_id"], name: "index_hobbies_on_soul_id"
@@ -94,8 +102,12 @@ ActiveRecord::Schema.define(version: 20160802121844) do
     t.string   "team"
     t.string   "client"
     t.integer  "soul_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "imgproject_file_name"
+    t.string   "imgproject_content_type"
+    t.integer  "imgproject_file_size"
+    t.datetime "imgproject_updated_at"
   end
 
   add_index "projects", ["soul_id"], name: "index_projects_on_soul_id"
@@ -105,8 +117,12 @@ ActiveRecord::Schema.define(version: 20160802121844) do
     t.text     "description"
     t.string   "url"
     t.integer  "soul_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "imgpurpose_file_name"
+    t.string   "imgpurpose_content_type"
+    t.integer  "imgpurpose_file_size"
+    t.datetime "imgpurpose_updated_at"
   end
 
   add_index "purposes", ["soul_id"], name: "index_purposes_on_soul_id"
@@ -131,8 +147,12 @@ ActiveRecord::Schema.define(version: 20160802121844) do
     t.boolean  "onlineswitch"
     t.integer  "suitcategory_id"
     t.integer  "soul_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "imgresume_file_name"
+    t.string   "imgresume_content_type"
+    t.integer  "imgresume_file_size"
+    t.datetime "imgresume_updated_at"
   end
 
   add_index "resumes", ["soul_id"], name: "index_resumes_on_soul_id"
@@ -150,8 +170,12 @@ ActiveRecord::Schema.define(version: 20160802121844) do
     t.string   "skype"
     t.text     "history"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "imgsoul_file_name"
+    t.string   "imgsoul_content_type"
+    t.integer  "imgsoul_file_size"
+    t.datetime "imgsoul_updated_at"
   end
 
   create_table "suits", force: :cascade do |t|
@@ -190,8 +214,12 @@ ActiveRecord::Schema.define(version: 20160802121844) do
     t.string   "url"
     t.integer  "wishescategory_id"
     t.integer  "soul_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "imgwish_file_name"
+    t.string   "imgwish_content_type"
+    t.integer  "imgwish_file_size"
+    t.datetime "imgwish_updated_at"
   end
 
   add_index "wishes", ["soul_id"], name: "index_wishes_on_soul_id"

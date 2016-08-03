@@ -14,6 +14,7 @@
               - @soul.errors.full_messages.each do |msg|
                 %li= msg
         .panel-body
+          = f.input :imgsoul, label: 'Attach an image that will be in this soul', input_html: { class: 'form-control'}
           = f.input :name, label: 'Youre Name', input_html: { title: "NAME of your soul", class: 'form-control'}
           = f.input :surname, label: 'Youre Surname', input_html: { class: 'form-control'}
           = f.input :nickname, label: 'If you have a Nickname', input_html: { title: "NAME of your soul", class: 'form-control'}

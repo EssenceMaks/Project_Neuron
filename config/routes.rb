@@ -14,12 +14,15 @@ Rails.application.routes.draw do
     resources :hobbies
   end
 
-  root "suits#index"
-  get 'user_suits', to: 'suits#user_suits'
+  root "resumes#all_resumes"
+  get 'soul_resumes', to: 'resumes#show'
 
   get 'home', to: 'souls#home'
   get 'cabinet', to: 'souls#cabinet'
   get 'organizer', to: 'souls#organizer'
+  get 'all_resumes', to: 'resumes#all_resumes'
+  get 'resumes', to: 'resumes#all_resumes'
+
 
 
 

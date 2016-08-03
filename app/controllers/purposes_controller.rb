@@ -49,7 +49,7 @@ class PurposesController < ApplicationController
 	private
 
 	def purpose_params
-		params.require(:purpose).permit(:purport, :description, :url)
+		params.require(:purpose).permit(:purport, :description, :url, :imgpurpose)
 	end
 
 	def find_soul

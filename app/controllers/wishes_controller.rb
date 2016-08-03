@@ -49,7 +49,7 @@ class WishesController < ApplicationController
 	private
 
 	def wish_params
-		params.require(:wish).permit(:title, :description, :url)
+		params.require(:wish).permit(:title, :description, :url, :imgwish)
 	end
 
 	def find_soul
