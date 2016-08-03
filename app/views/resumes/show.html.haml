@@ -30,74 +30,74 @@
       /<a href=@soul.Facebook, target="_blank" class=" div1"><%= image_tag("fb.png", :title => "My Facebook", :class => "ava1")%><span class="name"></span></a></li>
 
 .suit_text
-  .col-sm-1
-  .col-sm-10
-    
-    #Technologies_I_work_with:
-      %h3 Technologies I work with:
-      %ul
-        - @resume.my_skills.each do |skill|
-          %li= skill.skill 
-
-    #Interested_in:
-      %h3 Interested in:
-      %ul
-        - @resume.interested_ins.each do |interested_in|
-          %li= interested_in.futureskill
-
-    #Education:
+  .allcv
+    .col-sm-1
+    .col-sm-10
+      .Technologies
+      .col-xs-6.col-md-6
+        #Technologies_I_work_with:
+          %h3 Technologies I work with:
+          %ul
+            - @resume.my_skills.each do |skill|
+              %li= skill.skill 
+      .col-xs-6.col-md-6
+        #Interested_in:
+          %h3 Interested in:
+          %ul
+            - @resume.interested_ins.each do |interested_in|
+              %li= interested_in.futureskill
+      %h3 Software experiance:
+      .body_resume_sho
+        - @projects.each do |proj|
+          .res_proj_1
+            .col-xs-2.col-md-2
+              = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "project_fotos"), soul_project_path(@soul, proj)
+            .col-xs-5.col-md-5.scroll
+              %h4= link_to proj.name, soul_project_path(@soul, proj)
+              %h5= proj.description
+            .col-xs-3.col-md-3.scroll
+              %h5 Team Leader: #{proj.team}
+              %h5 Squady:
+              %ul
+                - proj.projectteams.each do |pro|
+                  %li= pro.team.upcase
+              /%h5= proj.projectteams.each {|pro| pro.team }
+              /%p= truncate(proj.description, length: 25)
+            .col-xs-2.col-md-2.scroll
+              %h5 Site:  
+              %h4= link_to proj.name, proj.url, target: '_blank'
+            /(:name, :description, :url, :imgproject, :team, :client, :imgproject, 
+            /projectteams_attributes: [:id, :team, :_destroy])
+      .body_resume_show
       %h3 Education:
-      %ul
-        - @resume.educations.each do |education|
-          %li= education.college
-
-    #Additional_education:
-      %h3 Additional education:
-      %ul
-        - @resume.additional_educations.each do |additional_education|
-          %li= additional_education.academy 
-
-    #Additional_education:
-      %h3 Work objectives:
-      %ul
-        - @resume.workobjectives.each do |workobjective|
-          %li= workobjective.objective 
-
-    #Additional_education:
-      %h3 Reasons:
-      %ul
-        - @resume.reasons.each do |reas|
-          %li= reas.reason 
-  .col-sm-1
-
-  %br
-  %h1 this is the face of user, like a person status
-  %h2= @resume.suitname
-  %br
-  %h2= @resume.suitname
-  %br
-  %h3= link_to @soul.name, soul_path(@soul)
-  %br
+      #Education:
+        %ul
+          - @resume.educations.each do |education|
+            %li= education.college
+  
+      #Additional_education:
+        %h3 Additional education:
+        %ul
+          - @resume.additional_educations.each do |additional_education|
+            %li= additional_education.academy 
+  
+      #Additional_education:
+        %h3 Work objectives:
+        %ul
+          - @resume.workobjectives.each do |workobjective|
+            %li= workobjective.objective 
+  
+      #Additional_education:
+        %h3 Reasons:
+        %ul
+          - @resume.reasons.each do |reas|
+            %li= reas.reason 
+    .col-sm-1
+  .footer
   = link_to "new", new_soul_resume_path, class: "btn btn-default btn_bottom_back"
-  = link_to "delete", soul_resume_path(@soul, @resume), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
-
-  .body_resume_show
-    .col-xs-1.col-md-1
-
-    .col-xs-10.col-md-10
-      - @resumes.each do |res|
-        .user_plate
-          .col-xs-3.col-md-3
-            .suit
-              .suits_fotos
-                %h2= link_to res.suitname, soul_resume_path(@soul, res)
-                %h2= truncate(res.suitdescription, length: 5)
-          .col-xs-3.col-md-3
-          .col-xs-3.col-md-3
-          .col-xs-3.col-md-3
+  = link_to "delete", soul_resume_path(@soul, @resume), method: :delete, data: {confirm: "Are you   sure?"}, class: "btn btn-default btn_bottom_back"
 
 
-    .col-xs-1.col-md-1
 
   - if @soul.user == current_user
     = link_to "edit", edit_soul_resume_path, class: "btn btn-default btn_bottom_back"

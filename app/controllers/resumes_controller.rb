@@ -28,6 +28,7 @@ class ResumesController < ApplicationController
 	def show
 		@resumes = Resume.where(soul_id: @soul).order("created_at DESC")  
 		@age = Time.now
+		@projects = Project.where(soul_id: @soul).order("created_at DESC")
 	end
 
 	def edit

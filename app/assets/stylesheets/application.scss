@@ -34,6 +34,17 @@
 	font-family: Ubuntu;
 }
 
+.suit_body {
+	margin-bottom: 100px;
+	min-width: 1250px;
+	width: 90%;
+    margin-top: 0px;
+    margin-right: 5%;
+    margin-bottom: 50px;
+    margin-left: 5%; 
+    height: 1000px;	
+}
+
 .mainnavigation {
 	background-image: url('congruent_pentagon.png');
 	position: fixed; 
@@ -52,7 +63,7 @@
 			margin-top: 10px;
 		}
 
-/* current suit show page*/
+/* current resume*/
 
 .suit_header {
 	position: relative;
@@ -110,19 +121,37 @@
 	background-color: red;
 	border-radius: 25px;
 }
+/* Body resume show page*/
+.body_resume_show{
+	display: inline-block;
+	background-image: url('geometry2.png')
+}
+.res_proj_1{
+	height: 160px;
+	background-image: url('geometry2.png');
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	border-radius: 5px;
+
+	}
+		.project_fotos{
+			height: 140px;
+		    width: 100px;
+		    border-radius: 10px;
+		}
+		.skill_show{
+			height: 250px;
+			overflow: auto;	
+		}
+		.scroll{
+			height: 150px;
+			overflow: auto;
+		}
 
 /* Show all suits page*/
 
-.suit_body {
-	margin-bottom: 100px;
-	min-width: 1250px;
-	width: 90%;
-    margin-top: 0px;
-    margin-right: 5%;
-    margin-bottom: 50px;
-    margin-left: 5%; 
-    height: 1000px;	
-}
+
 
 .search_suits_show {
 	background-image: url('congruent_pentagon.png');
