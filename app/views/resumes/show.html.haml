@@ -95,9 +95,9 @@
     .col-sm-1
   .footer
   = link_to "new", new_soul_resume_path, class: "btn btn-default btn_bottom_back"
-  = link_to "delete", soul_resume_path(@soul, @resume), method: :delete, data: {confirm: "Are you   sure?"}, class: "btn btn-default btn_bottom_back"
 
 
 
   - if @soul.user == current_user
     = link_to "edit", edit_soul_resume_path, class: "btn btn-default btn_bottom_back"
+    = link_to "delete", soul_resume_path(@soul, @resume), method: :delete, data: {confirm: "Are you   sure?"}, class: "btn btn-default btn_bottom_back"
