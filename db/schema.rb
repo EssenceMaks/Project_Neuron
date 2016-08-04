@@ -194,10 +194,10 @@ ActiveRecord::Schema.define(version: 20160803090358) do
   add_index "resumes", ["soul_id"], name: "index_resumes_on_soul_id"
 
   create_table "souls", force: :cascade do |t|
-    t.string   "name"
-    t.string   "surname"
+    t.string   "name",                 default: "name"
+    t.string   "surname",              default: "surname"
     t.string   "nickname"
-    t.date     "born"
+    t.date     "born",                 default: '2016-08-04'
     t.string   "city"
     t.string   "mob_number"
     t.string   "facebook"
@@ -206,8 +206,8 @@ ActiveRecord::Schema.define(version: 20160803090358) do
     t.string   "skype"
     t.text     "history"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.string   "imgsoul_file_name"
     t.string   "imgsoul_content_type"
     t.integer  "imgsoul_file_size"

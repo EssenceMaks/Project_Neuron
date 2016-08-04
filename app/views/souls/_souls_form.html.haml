@@ -15,8 +15,8 @@
                 %li= msg
         .panel-body
           = f.input :imgsoul, label: 'Attach an image that will be in this soul', input_html: { class: 'form-control'}
-          = f.input :name, label: 'Youre Name', input_html: { title: "NAME of your soul", class: 'form-control'}
-          = f.input :surname, label: 'Youre Surname', input_html: { class: 'form-control'}
+          = f.input :name, default: 'name', label: 'Youre Name', input_html: { title: "NAME of your soul", class: 'form-control'}
+          = f.input :surname, default: 'surname', label: 'Youre Surname', input_html: { class: 'form-control'}
           = f.input :nickname, label: 'If you have a Nickname', input_html: { title: "NAME of your soul", class: 'form-control'}
           = f.input :born, start_year: 1900, label: 'Date of yore birthday', input_html: { class: 'form-control'}
           /:start_date, { :include_blank => true, :start_year => 1995 }
