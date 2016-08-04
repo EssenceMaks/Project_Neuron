@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803090351) do
+ActiveRecord::Schema.define(version: 20160803090358) do
 
   create_table "additional_educations", force: :cascade do |t|
     t.text     "academy"
