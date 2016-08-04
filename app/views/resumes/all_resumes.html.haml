@@ -8,35 +8,35 @@
     
 
 .body_suits_show
-/  .col-xs-1.col-md-1
-/
-/  .col-xs-10.col-md-10
-/    - @suit.each_slice(1) do |s|
-/      .user_plate
-/        - s.each do |su|
-/          .col-xs-3.col-md-3
-/            .suit
-/              .suits_fotos
-/                /= link_to su do
-/                /  = image_tag su.image.url, class: "suits_fotos"
-/          .col-xs-3.col-md-3
-/            %h3= link_to su.suitname, soul_resume_path(su.soul_id, su)
-/            /%h4= .souls.born
-/            /%h3= @user.souls.name
-/
-/          .col-xs-3.col-md-3
-/            .skill_show
-/            /  %h5 skill list
-/            /  %ul
-/            /    - su.my_skills.each do |t|
-/            /      %li= t.skill.upcase
-/          .col-xs-3.col-md-3
-/            %h5 Projects and Dignity
-/            .skill_show
-/            /  %h5 skill list
-/            /  %ul
-/            /    = link_to su do
-/            /      - su.my_skills.map do |skill|
-/            /        %li= skill.skill 
-/
-/  .col-xs-1.col-md-1
+  .col-xs-1.col-md-1
+
+  .col-xs-10.col-md-10
+    - @suit.each_slice(1) do |s|
+      .user_plate
+        - s.each do |su|
+          .col-xs-3.col-md-3
+            .suit
+              .suits_fotos
+                /= link_to su do
+                /  = image_tag su.image.url, class: "suits_fotos"
+          .col-xs-3.col-md-3
+            %h3= link_to su.suitname, soul_resume_path(su.soul_id, su)
+            /%h4= .souls.born
+            /%h3= @user.souls.name
+
+          .col-xs-3.col-md-3
+            .skill_show
+            /  %h5 skill list
+            /  %ul
+            /    - su.my_skills.each do |t|
+            /      %li= t.skill.upcase
+          .col-xs-3.col-md-3
+            %h5 Projects and Dignity
+            .skill_show
+            /  %h5 skill list
+            /  %ul
+            /    = link_to su do
+            /      - su.my_skills.map do |skill|
+            /        %li= skill.skill 
+
+  .col-xs-1.col-md-1
