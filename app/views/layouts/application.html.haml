@@ -22,8 +22,11 @@
     .col-xs-3.col-sm-3
       .navbar-brand= link_to "Suits", all_resumes_path
     .col-xs-3.col-sm-3
-      .navbar-brand= link_to "New Suit", resumes_path#, new_suit_path
-    .col-xs-3.col-sm-3
+      - if user_signed_in?
+        .navbar-brand= link_to "New Suit", soul_resumes_path(current_user) #soul_project_path#, new_suit_path
+      - else
+        .navbar-brand= link_to "", new_user_registration_path # LOGO IMAGE
+     .col-xs-3.col-sm-3
       - if user_signed_in?
         .navbar-brand= link_to "Sign Out", destroy_user_session_path, :method => :delete
       - else

@@ -4,8 +4,9 @@ class ResumesController < ApplicationController
 
 	def all_resumes
 		@suit = Resume.all.order("created_at DESC")
-		#@souls = @suit.resumes.find(params[:id])Resume.find_by(soul_id: params[:soul_id])
+		@newsuits = Resume.where(soul_id: @soul).order("created_at DESC")
 	    #@soul = Soul.find(params[:soul_id])
+	    #@soul = Soul.find(params[:id])
 	end
 
 	def index

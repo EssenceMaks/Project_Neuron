@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   root "resumes#all_resumes"
   get 'soul_resumes', to: 'resumes#show'
+  #get 'new_suit', to: 'resumes#new' #new_soul_resume
 
   get 'home', to: 'souls#home'
   get 'cabinet', to: 'souls#cabinet'
