@@ -1,5 +1,6 @@
 class Hobby < ActiveRecord::Base
   belongs_to :soul
+  has_many :hobcomments
 
   has_many :hobbylists
   accepts_nested_attributes_for :hobbylists, reject_if: proc { |attributes| attributes['hob_mark'].blank? }, allow_destroy: true

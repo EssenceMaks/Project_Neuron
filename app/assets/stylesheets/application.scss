@@ -118,7 +118,7 @@
 	width: 70px
 }
 .sosial_logo_suit_show_page_transform:hover {
-	background-color: red;
+	background-color: #ff0800;
 	border-radius: 25px;
 }
 /* Body resume show page*/
@@ -132,6 +132,8 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding-top: 10px;
+	border: 2px solid;
+    border-color: #b7071b; /*#ff0800 #7100A3 */ 
 	border-radius: 5px;
 
 	}

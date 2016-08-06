@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :soul
+  has_many :projcomments
 
   has_many :projectteams
   accepts_nested_attributes_for :projectteams, reject_if: proc { |attributes| attributes['team'].blank? }, allow_destroy: true

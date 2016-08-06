@@ -1,0 +1,2 @@
+module HobcommentsHelper
+end

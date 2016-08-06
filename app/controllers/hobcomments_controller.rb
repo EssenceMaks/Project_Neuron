@@ -1,0 +1,2 @@
+class HobcommentsController < ApplicationController
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wishcontent: MyText
+  wish_id: 
+  soul_id: 
+  user_id: 
+
+two:
+  wishcontent: MyText
+  wish_id: 
+  soul_id: 
+  user_id: 

@@ -23,12 +23,20 @@
           .col-xs-3.col-md-3
 
 
-    .col-xs-5.col-md-5
+    .col-xs-2.col-md-2
       #Additional_education:
         %h3 Team:
         %ul
           - @project.projectteams.each do |projectteam|
             %li= projectteam.team 
+    .col-xs-3.col-md-3
+      #comments
+        %h2.comment_count= pluralize(@project.projcomments.count, "Comment")
+        - @projcomments.each do |projcomment|
+          .comment
+            %p.username= projcomment.soul.name
+            %p.content= projcomment.projcontent
+        = render "projcomments/form"
 
   - if @soul.user == current_user
     = link_to "edit", edit_soul_project_path, class: "btn btn-default btn_bottom_back"

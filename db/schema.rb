@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803090358) do
+ActiveRecord::Schema.define(version: 20160806120734) do
 
   create_table "additional_educations", force: :cascade do |t|
     t.text     "academy"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20160803090358) do
   end
 
   add_index "additional_educations", ["resume_id"], name: "index_additional_educations_on_resume_id"
+
+  create_table "artcomments", force: :cascade do |t|
+    t.text     "artcontent"
+    t.integer  "article_id"
+    t.integer  "soul_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "artcomments", ["article_id"], name: "index_artcomments_on_article_id"
+  add_index "artcomments", ["soul_id"], name: "index_artcomments_on_soul_id"
+  add_index "artcomments", ["user_id"], name: "index_artcomments_on_user_id"
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -95,6 +108,19 @@ ActiveRecord::Schema.define(version: 20160803090358) do
 
   add_index "hobbylists", ["hobby_id"], name: "index_hobbylists_on_hobby_id"
 
+  create_table "hobcomments", force: :cascade do |t|
+    t.text     "hobcontent"
+    t.integer  "hobby_id"
+    t.integer  "soul_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "hobcomments", ["hobby_id"], name: "index_hobcomments_on_hobby_id"
+  add_index "hobcomments", ["soul_id"], name: "index_hobcomments_on_soul_id"
+  add_index "hobcomments", ["user_id"], name: "index_hobcomments_on_user_id"
+
   create_table "interested_ins", force: :cascade do |t|
     t.string   "futureskill"
     t.integer  "resume_id"
@@ -112,6 +138,19 @@ ActiveRecord::Schema.define(version: 20160803090358) do
   end
 
   add_index "my_skills", ["resume_id"], name: "index_my_skills_on_resume_id"
+
+  create_table "projcomments", force: :cascade do |t|
+    t.text     "projcontent"
+    t.integer  "project_id"
+    t.integer  "soul_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "projcomments", ["project_id"], name: "index_projcomments_on_project_id"
+  add_index "projcomments", ["soul_id"], name: "index_projcomments_on_soul_id"
+  add_index "projcomments", ["user_id"], name: "index_projcomments_on_user_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -138,6 +177,19 @@ ActiveRecord::Schema.define(version: 20160803090358) do
   end
 
   add_index "projectteams", ["project_id"], name: "index_projectteams_on_project_id"
+
+  create_table "purpcomments", force: :cascade do |t|
+    t.text     "purpcontent"
+    t.integer  "purpose_id"
+    t.integer  "soul_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "purpcomments", ["purpose_id"], name: "index_purpcomments_on_purpose_id"
+  add_index "purpcomments", ["soul_id"], name: "index_purpcomments_on_soul_id"
+  add_index "purpcomments", ["user_id"], name: "index_purpcomments_on_user_id"
 
   create_table "purposes", force: :cascade do |t|
     t.string   "purport"
@@ -166,6 +218,19 @@ ActiveRecord::Schema.define(version: 20160803090358) do
   end
 
   add_index "quotations", ["soul_id"], name: "index_quotations_on_soul_id"
+
+  create_table "quotcomments", force: :cascade do |t|
+    t.text     "quotcontent"
+    t.integer  "quotation_id"
+    t.integer  "soul_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "quotcomments", ["quotation_id"], name: "index_quotcomments_on_quotation_id"
+  add_index "quotcomments", ["soul_id"], name: "index_quotcomments_on_soul_id"
+  add_index "quotcomments", ["user_id"], name: "index_quotcomments_on_user_id"
 
   create_table "reasons", force: :cascade do |t|
     t.text     "reason"
@@ -243,6 +308,19 @@ ActiveRecord::Schema.define(version: 20160803090358) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "wishcomments", force: :cascade do |t|
+    t.text     "wishcontent"
+    t.integer  "wish_id"
+    t.integer  "soul_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "wishcomments", ["soul_id"], name: "index_wishcomments_on_soul_id"
+  add_index "wishcomments", ["user_id"], name: "index_wishcomments_on_user_id"
+  add_index "wishcomments", ["wish_id"], name: "index_wishcomments_on_wish_id"
 
   create_table "wishes", force: :cascade do |t|
     t.string   "title"

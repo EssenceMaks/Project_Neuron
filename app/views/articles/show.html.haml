@@ -21,6 +21,14 @@
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
+            #comments
+              %h2.comment_count= pluralize(@article.artcomments.count, "Comment")
+              - @artcomments.each do |artcomment|
+                .comment
+                  %p
+                    = artcomment.soul.name
+                    = artcomment.artcontent
+            = render "artcomments/form"         
 
 
     .col-xs-1.col-md-1

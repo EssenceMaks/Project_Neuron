@@ -1,0 +1,3 @@
+= simple_form_for([@soul, @project, @project.projcomments.build]) do |f|
+	= f.input :projcontent, label: "Reply to thread"
+	= f.button :submit, class: "button"

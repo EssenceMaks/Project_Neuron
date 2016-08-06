@@ -1,0 +1,2 @@
+module WishcommentsHelper
+end

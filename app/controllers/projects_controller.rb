@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
 
 	def show
 		@projects = Project.where(soul_id: @soul).order("created_at DESC")  
-		
+		@projcomments = Projcomment.where(project_id: @project)
 	end
 
 	def edit

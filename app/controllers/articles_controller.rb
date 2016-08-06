@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
 
 	def show
 		@articles = Article.where(soul_id: @soul).order("created_at DESC")  
-		
+		@artcomments = Artcomment.where(article_id: @article)
 	end
 
 	def edit

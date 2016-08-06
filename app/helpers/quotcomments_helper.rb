@@ -1,0 +1,2 @@
+module QuotcommentsHelper
+end

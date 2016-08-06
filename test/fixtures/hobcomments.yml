@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hobcontent: MyText
+  hobby_id: 
+  soul_id: 
+  user_id: 
+
+two:
+  hobcontent: MyText
+  hobby_id: 
+  soul_id: 
+  user_id: 

@@ -8,7 +8,10 @@
         .col-xs-3.col-md-3
           .suit
             .suits_fotos
-              %h2= link_to art.name, soul_article_path(@soul, art)
+              %h2= link_to art.title, soul_article_path(@soul, art)
+              %h4
+                = art.artcomments.count
+                Comments
         .col-xs-3.col-md-3
         .col-xs-3.col-md-3
         .col-xs-3.col-md-3

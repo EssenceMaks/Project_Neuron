@@ -4,14 +4,26 @@ Rails.application.routes.draw do
   devise_for :users
   #, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
   resources :souls do#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
-    resources :resumes
-    resources :projects
-    resources :purposes
-    resources :quotations
-    resources :articles
+    resources :projects do
+      resources :projcomments
+    end
+    resources :purposes do
+      resources :purpcomments
+    end
+    resources :quotations do
+      resources :quotcomments
+    end
+    resources :articles do
+      resources :artcomments
+    end
+    resources :wishes do
+      resources :wishcomments
+    end
+    resources :hobbies do
+      resources :hobcomments
+    end
     resources :experiences
-    resources :wishes
-    resources :hobbies
+    resources :resumes 
   end
 
   root "resumes#all_resumes"
