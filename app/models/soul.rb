@@ -11,7 +11,7 @@ class Soul < ActiveRecord::Base
 	has_many :artcomments
 	has_many :hobcomments
 	has_many :purpcomments
-	has_many :qoutcomments
+	has_many :qoutycomments
 	has_many :wishcomments
 	has_many :projcomments
 

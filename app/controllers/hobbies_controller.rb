@@ -25,7 +25,7 @@ class HobbiesController < ApplicationController
 
 	def show
 		@hobbies = Hobby.where(soul_id: @soul).order("created_at DESC")  
-		
+		@hobcomments = Hobcomment.where(hobby_id: @hobby)
 	end
 
 	def edit

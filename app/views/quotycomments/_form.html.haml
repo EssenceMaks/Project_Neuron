@@ -1,0 +1,3 @@
+= simple_form_for([@soul, @quotation, @quotation.quotycomments.build]) do |f|
+	= f.input :quotycontent, label: "Reply to thread"
+	= f.button :submit, class: "button"

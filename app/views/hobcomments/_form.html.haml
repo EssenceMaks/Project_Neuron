@@ -1,0 +1,3 @@
+= simple_form_for([@soul, @hobby, @hobby.hobcomments.build]) do |f|
+	= f.input :hobcontent, label: "Reply to thread"
+	= f.button :submit, class: "button"

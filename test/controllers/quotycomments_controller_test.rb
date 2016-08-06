@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class QuotcommentsControllerTest < ActionController::TestCase
+class QuotycommentsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

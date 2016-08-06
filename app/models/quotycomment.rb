@@ -1,4 +1,4 @@
-class Quotcomment < ActiveRecord::Base
+class Quotycomment < ActiveRecord::Base
   belongs_to :quotation
   belongs_to :soul
   belongs_to :user

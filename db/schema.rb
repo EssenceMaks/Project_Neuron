@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806120734) do
+ActiveRecord::Schema.define(version: 20160806193954) do
 
   create_table "additional_educations", force: :cascade do |t|
     t.text     "academy"
@@ -219,8 +219,8 @@ ActiveRecord::Schema.define(version: 20160806120734) do
 
   add_index "quotations", ["soul_id"], name: "index_quotations_on_soul_id"
 
-  create_table "quotcomments", force: :cascade do |t|
-    t.text     "quotcontent"
+  create_table "quotycomments", force: :cascade do |t|
+    t.text     "quotycontent"
     t.integer  "quotation_id"
     t.integer  "soul_id"
     t.integer  "user_id"
@@ -228,9 +228,9 @@ ActiveRecord::Schema.define(version: 20160806120734) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "quotcomments", ["quotation_id"], name: "index_quotcomments_on_quotation_id"
-  add_index "quotcomments", ["soul_id"], name: "index_quotcomments_on_soul_id"
-  add_index "quotcomments", ["user_id"], name: "index_quotcomments_on_user_id"
+  add_index "quotycomments", ["quotation_id"], name: "index_quotycomments_on_quotation_id"
+  add_index "quotycomments", ["soul_id"], name: "index_quotycomments_on_soul_id"
+  add_index "quotycomments", ["user_id"], name: "index_quotycomments_on_user_id"
 
   create_table "reasons", force: :cascade do |t|
     t.text     "reason"
@@ -262,7 +262,7 @@ ActiveRecord::Schema.define(version: 20160806120734) do
     t.string   "name",                 default: "name"
     t.string   "surname",              default: "surname"
     t.string   "nickname"
-    t.date     "born",                 default: '2016-08-04'
+    t.date     "born",                 default: '2016-08-06'
     t.string   "city"
     t.string   "mob_number"
     t.string   "facebook"

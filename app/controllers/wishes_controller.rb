@@ -25,7 +25,7 @@ class WishesController < ApplicationController
 
 	def show
 		@wishes = Wish.where(soul_id: @soul).order("created_at DESC")  
-		
+		@wishcomments = Wishcomment.where(wish_id: @wish)
 	end
 
 	def edit

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :purpcomments
     end
     resources :quotations do
-      resources :quotcomments
+      resources :quotycomments
     end
     resources :articles do
       resources :artcomments

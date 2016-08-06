@@ -1,0 +1,3 @@
+= simple_form_for([@soul, @wish, @wish.wishcomments.build]) do |f|
+	= f.input :wishcontent, label: "Reply to thread"
+	= f.button :submit, class: "button"

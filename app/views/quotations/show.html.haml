@@ -8,9 +8,16 @@
   = link_to "delete", soul_quotation_path(@soul, @quotation), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
 
   .body_quotation_show
-    .col-xs-1.col-md-1
+    .col-xs-3.col-md-3
+      #comments
+        %h2.comment_count= pluralize(@quotation.quotycomments.count, "Comment")
+        - @quotycomments.each do |quotcom|
+          .comment
+            %p.username= quotcom.soul.name
+            %p.content= quotcom.quotycontent
+        = render "quotycomments/form"
 
-    .col-xs-10.col-md-10
+    .col-xs-8.col-md-8
       - @quotations.each do |quot|
         .user_plate
           .col-xs-3.col-md-3
@@ -22,9 +29,8 @@
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
-
-
     .col-xs-1.col-md-1
+
 
   - if @soul.user == current_user
     = link_to "edit", edit_soul_quotation_path, class: "btn btn-default btn_bottom_back"

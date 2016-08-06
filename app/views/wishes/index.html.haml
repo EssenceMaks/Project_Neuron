@@ -9,6 +9,9 @@
           .suit
             .suits_fotos
               %h2= link_to wi.title, soul_wish_path(@soul, wi)#(@wishs, @soul)
+              %h4
+                = wi.wishcomments.count
+                Comments
         .col-xs-3.col-md-3
         .col-xs-3.col-md-3
         .col-xs-3.col-md-3

@@ -25,7 +25,7 @@ class PurposesController < ApplicationController
 
 	def show
 		@purposes = Purpose.where(soul_id: @soul).order("created_at DESC")  
-		
+		@purpcomments = Purpcomment.where(purpose_id: @purpose)
 	end
 
 	def edit

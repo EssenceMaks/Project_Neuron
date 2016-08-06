@@ -10,7 +10,7 @@
   .body_purpose_show
     .col-xs-1.col-md-1
 
-    .col-xs-10.col-md-10
+    .col-xs-8.col-md-8
       - @purposes.each do |purp|
         .user_plate
           .col-xs-3.col-md-3
@@ -23,7 +23,14 @@
           .col-xs-3.col-md-3
 
 
-    .col-xs-1.col-md-1
+    .col-xs-3.col-md-3
+      #comments
+        %h2.comment_count= pluralize(@purpose.purpcomments.count, "Comment")
+        - @purpcomments.each do |purpcom|
+          .comment
+            %p.username= purpcom.soul.name
+            %p.content= purpcom.purpcontent
+        = render "purpcomments/form"
 
   - if @soul.user == current_user
     = link_to "edit", edit_soul_purpose_path, class: "btn btn-default btn_bottom_back"

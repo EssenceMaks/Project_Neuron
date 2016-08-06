@@ -25,7 +25,7 @@ class QuotationsController < ApplicationController
 
 	def show
 		@quotations = Quotation.where(soul_id: @soul).order("created_at DESC")  
-		
+		@quotycomments = Quotycomment.where(quotation_id: @quotation)
 	end
 
 	def edit

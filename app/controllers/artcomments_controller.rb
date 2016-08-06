@@ -1,5 +1,6 @@
 class ArtcommentsController < ApplicationController
-		before_action :authenticate_user!
+	before_action :authenticate_user!
+	
 	def create
 		@soul = Soul.find(params[:soul_id])
 		@article = Article.find(params[:article_id])
