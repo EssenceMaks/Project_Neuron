@@ -1,5 +1,5 @@
 class SoulsController < ApplicationController
-	before_action :find_soul, only: [:show, :edit, :update]
+	before_action :find_soul, only: [:show, :edit, :update, :upvote, :downvote]
 	before_action :authenticate_user!, except: [:show]
 
 	def index # your own page and for admin in future
@@ -62,6 +62,16 @@ class SoulsController < ApplicationController
 	def destroy
 		
 	end
+
+#		def upvote
+#			@soul.hobby.upvote_by current_user
+#			redirect_to :back
+#		end
+#
+#		def downvote
+#			@soul.hobby.downvote_by current_user
+#			redirect_to :back
+#		end
 
 	private
 		def soul_params

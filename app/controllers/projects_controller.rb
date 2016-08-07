@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 	before_action :find_soul
-	before_action :find_project, only: [:show, :edit, :update, :destroy]
+	before_action :find_project, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def soul_all_projects
 
@@ -46,6 +46,15 @@ class ProjectsController < ApplicationController
 		redirect_to soul_projects_path
 	end
 
+		def upvote
+			@project.upvote_by current_user
+			redirect_to :back
+		end
+
+		def downvote
+			@project.downvote_from current_user
+			redirect_to :back
+		end
 
 	private
 

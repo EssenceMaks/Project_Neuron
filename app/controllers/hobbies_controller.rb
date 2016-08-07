@@ -1,6 +1,6 @@
 class HobbiesController < ApplicationController
 	before_action :find_soul
-	before_action :find_hobby, only: [:show, :edit, :update, :destroy]
+	before_action :find_hobby, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def soul_all_hobbies
 
@@ -44,6 +44,17 @@ class HobbiesController < ApplicationController
 		@hobby.destroy
 		redirect_to soul_hobbies_path(@soul)
 	end
+
+
+		def upvote
+			@hobby.upvote_by @soul
+			redirect_to :back
+		end
+
+		def downvote
+			@hobby.downvote_from @soul
+			redirect_to :back
+		end
 
 
 	private

@@ -9,6 +9,14 @@
 
   .body_article_show
     .col-xs-1.col-md-1
+      %p
+        =@article.get_upvotes.size
+        Likes
+      %p
+        =@article.get_downvotes.size
+        Likes
+      =link_to "Like", like_soul_article_path, method: :get
+      =link_to "Dislike", dislike_soul_article_path, method: :get
 
     .col-xs-10.col-md-10
       - @articles.each do |art|

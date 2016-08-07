@@ -5,21 +5,45 @@ Rails.application.routes.draw do
   #, path_names: { show: "soul"},only: [:show, :edit, :update, :index]
   resources :souls do#, path_names: { edit: "soul", update: "soul" }, only: [:show, :edit, :update, :index]
     resources :projects do
+      member do
+        get "like", to: "projects#upvote"
+        get "dislike", to: "projects#downvote"
+      end
       resources :projcomments
     end
     resources :purposes do
+      member do
+        get "like", to: "purposes#upvote"
+        get "dislike", to: "purposes#downvote"
+      end
       resources :purpcomments
     end
     resources :quotations do
+      member do
+        get "like", to: "quotations#upvote"
+        get "dislike", to: "quotations#downvote"
+      end
       resources :quotycomments
     end
     resources :articles do
+      member do
+        get "like", to: "articles#upvote"
+        get "dislike", to: "articles#downvote"
+      end
       resources :artcomments
     end
     resources :wishes do
+      member do
+        get "like", to: "wishes#upvote"
+        get "dislike", to: "wishes#downvote"
+      end
       resources :wishcomments
     end
     resources :hobbies do
+      member do
+        get "like", to: "hobbies#upvote"
+        get "dislike", to: "hobbies#downvote"
+      end
       resources :hobcomments
     end
     resources :experiences

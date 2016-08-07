@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
 	before_action :find_soul
-	before_action :find_article, only: [:show, :edit, :update, :destroy]
+	before_action :find_article, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def soul_all_articles
 
@@ -45,6 +45,16 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		redirect_to soul_articles_path(@soul)
 	end
+
+		def upvote
+			@article.upvote_by current_user
+			redirect_to :back
+		end
+
+		def downvote
+			@article.downvote_from current_user
+			redirect_to :back
+		end	
 
 
 	private

@@ -1,6 +1,6 @@
 class PurposesController < ApplicationController
 	before_action :find_soul
-	before_action :find_purpose, only: [:show, :edit, :update, :destroy]
+	before_action :find_purpose, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def soul_all_purposes
 
@@ -45,6 +45,15 @@ class PurposesController < ApplicationController
 		redirect_to soul_purposes_path
 	end
 
+		def upvote
+			@purpose.upvote_by current_user
+			redirect_to :back
+		end
+
+		def downvote
+			@purpose.downvote_from current_user
+			redirect_to :back
+		end
 
 	private
 

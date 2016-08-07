@@ -9,6 +9,14 @@
 
   .body_purpose_show
     .col-xs-1.col-md-1
+      %p
+        =@purpose.get_upvotes.size
+        Likes
+      %p
+        =@purpose.get_downvotes.size
+        Likes
+      =link_to "Like", like_soul_purpose_path, method: :get
+      =link_to "Dislike", dislike_soul_purpose_path, method: :get
 
     .col-xs-8.col-md-8
       - @purposes.each do |purp|

@@ -9,6 +9,14 @@
 
   .body_wish_show
     .col-xs-1.col-md-1
+      %p
+        =@wish.get_upvotes.size
+        Likes
+      %p
+        =@wish.get_downvotes.size
+        Likes
+      =link_to "Like", like_soul_wish_path, method: :get
+      =link_to "Dislike", dislike_soul_wish_path, method: :get
 
     .col-xs-6.col-md-6
       - @wishes.each do |wi|

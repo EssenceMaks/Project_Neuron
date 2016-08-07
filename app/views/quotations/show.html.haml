@@ -30,6 +30,14 @@
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
     .col-xs-1.col-md-1
+      %p
+        =@quotation.get_upvotes.size
+        Likes
+      %p
+        =@quotation.get_downvotes.size
+        Likes
+      =link_to "Like", like_soul_quotation_path(@soul, @quotation), method: :get
+      =link_to "Dislike", dislike_soul_quotation_path(@soul, @quotation), method: :get
 
 
   - if @soul.user == current_user

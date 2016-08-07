@@ -1,6 +1,6 @@
 class QuotationsController < ApplicationController
 	before_action :find_soul
-	before_action :find_quotation, only: [:show, :edit, :update, :destroy]
+	before_action :find_quotation, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def soul_all_quotations
 
@@ -45,6 +45,15 @@ class QuotationsController < ApplicationController
 		redirect_to soul_quotations_path
 	end
 
+		def upvote
+			@quotation.upvote_by current_user
+			redirect_to :back
+		end
+
+		def downvote
+			@quotation.downvote_from current_user
+			redirect_to :back
+		end
 
 	private
 

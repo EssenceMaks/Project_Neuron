@@ -1,6 +1,6 @@
 class WishesController < ApplicationController
 	before_action :find_soul
-	before_action :find_wish, only: [:show, :edit, :update, :destroy]
+	before_action :find_wish, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 	def soul_all_wishes
 
@@ -45,6 +45,15 @@ class WishesController < ApplicationController
 		redirect_to soul_wishes_path(@soul)
 	end
 
+		def upvote
+			@wish.upvote_by current_user
+			redirect_to :back
+		end
+
+		def downvote
+			@wish.downvote_from current_user
+			redirect_to :back
+		end
 
 	private
 

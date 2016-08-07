@@ -6,10 +6,26 @@
   %br
   = link_to "new", new_soul_hobby_path, class: "btn btn-default btn_bottom_back"
   = link_to "delete", soul_hobby_path(@soul, @hobby), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
-
+  .co
+    %p
+      =@hobby.get_upvotes.size
+      Likes
+    %p
+      =@hobby.get_downvotes.size
+      Likes
+    =link_to "Like", like_soul_hobby_path(@soul, @hobby), method: :get
+    =link_to "Dislike", dislike_soul_hobby_path(@soul, @hobby), method: :get
   .body_hobby_show
-
-    .col-xs-6.col-md-6
+    .col-xs-1.col-md-1
+      %p
+        =@hobby.get_upvotes.size
+        Likes
+      %p
+        =@hobby.get_downvotes.size
+        Likes
+      =link_to "Like", like_soul_hobby_path, method: :get
+      =link_to "Dislike", dislike_soul_hobby_path, method: :get
+    .col-xs-5.col-md-5
       - @hobbies.each do |hob|
         .user_plate
           .col-xs-3.col-md-3
@@ -19,7 +35,15 @@
                 %h2= truncate(hob.description, length: 5)
           .col-xs-3.col-md-3
           .col-xs-3.col-md-3
+            %p
+              =@hobby.get_upvotes.size
+              Likes
+            %p
+              =@hobby.get_downvotes.size
+              Dislikes
           .col-xs-3.col-md-3
+            =link_to "Like", like_soul_hobby_path, method: :get
+            =link_to "Dislike", dislike_soul_hobby_path, method: :get
 
 
     .col-xs-3.col-md-3
