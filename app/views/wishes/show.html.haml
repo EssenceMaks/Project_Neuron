@@ -6,7 +6,15 @@
   %br
   = link_to "new", new_soul_wish_path, class: "btn btn-default btn_bottom_back"
   = link_to "delete", soul_wish_path(@soul, @wish), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default btn_bottom_back"
-
+  .co
+    %p
+      =@wish.get_upvotes.size
+      Likes
+    %p
+      =@wish.get_downvotes.size
+      Likes
+    =link_to "Like", like_soul_wish_path(@soul, @wish), method: :get
+    =link_to "Dislike", dislike_soul_wish_path(@soul, @wish), method: :get
   .body_wish_show
     .col-xs-1.col-md-1
       %p

@@ -15,8 +15,8 @@
       %p
         =@article.get_downvotes.size
         Likes
-      =link_to "Like", like_soul_article_path, method: :get
-      =link_to "Dislike", dislike_soul_article_path, method: :get
+      =link_to "Like", like_soul_article_path(@soul, @article), method: :get
+      =link_to "Dislike", dislike_soul_article_path(@soul, @article), method: :get
 
     .col-xs-10.col-md-10
       - @articles.each do |art|
