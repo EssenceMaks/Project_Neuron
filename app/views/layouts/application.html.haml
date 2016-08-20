@@ -7,23 +7,26 @@
   = csrf_meta_tags
 
 %body.body
-  .suit_body
+  .mainbody
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "alert"
-    = yield
- 
+    = yield 
   .mainnavigation
     .col-xs-3.col-sm-3
       - if user_signed_in?
-        .navbar-brand= link_to "Home", home_path#souls_path(current_user)
-        %h6= current_user.soul.name
+        .homebut= link_to "Home", home_path  #souls_path(current_user)
+        .btn-group
+          .btn= link_to "Cabinet", cabinet_path
+          .btn= link_to "Organizer", organizer_path
+          /%br= current_user.soul.name
       - else
         .navbar-brand= link_to "Sign in", new_user_session_path
     .col-xs-3.col-sm-3
-      .navbar-brand= link_to "Suits", all_resumes_path
+      .suitsbut= link_to "Suits", all_resumes_path
     .col-xs-3.col-sm-3
       - if user_signed_in?
-        .navbar-brand= link_to "New Suit", soul_resumes_path(current_user) #soul_project_path#, new_suit_path
+        .newsuitbut= link_to "New Suit", soul_resumes_path(current_user) #soul_project_path#, new_suit_path
+        .btn.namebut= link_to "#{current_user.soul.name}", edit_soul_path(current_user)
       - else
         .navbar-brand= link_to "PN", new_user_registration_path # LOGOIMAGE
     .col-xs-3.col-sm-3
@@ -31,3 +34,4 @@
         .navbar-brand= link_to "Sign Out", destroy_user_session_path, :method => :delete
       - else
         .navbar-brand= link_to "Sign Up", new_user_registration_path
+

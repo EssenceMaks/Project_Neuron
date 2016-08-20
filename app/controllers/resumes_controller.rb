@@ -1,10 +1,12 @@
 class ResumesController < ApplicationController
 	before_action :find_soul, except: [:all_resumes]
 	before_action :find_resume, only: [:show, :edit, :update, :destroy ]
+	before_action :authenticate_user!, except: [:index, :show, :all_resumes]
 
 	def all_resumes
-		@suit = Resume.all.order("created_at DESC")
+		@resume = Resume.all.order("created_at DESC")
 		@newsuits = Resume.where(soul_id: @soul).order("created_at DESC")
+		@projects = Project.all.order("created_at DESC")
 	    #@soul = Soul.find(params[:soul_id])
 	    #@soul = Soul.find(params[:id])
 	end

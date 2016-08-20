@@ -1,5 +1,5 @@
-.head_suit_show
-  .search_suits_show
+.headsuitsshow
+  .searchsuitsshow
     .col-xs-2.col-md-2
     .col-xs-6.col-md-6
       %h2 Look at these people dressed :)
@@ -7,36 +7,43 @@
       %h2 Search menu
     
 
-.body_suits_show
+.bodysuitsshow
   .col-xs-1.col-md-1
 
   .col-xs-10.col-md-10
-    - @suit.each_slice(1) do |s|
+    - @resume.each_slice(1) do |s|
       .user_plate
         - s.each do |su|
           .col-xs-3.col-md-3
             .suit
               .suits_fotos
-                /= link_to su do
-                /  = image_tag su.image.url, class: "suits_fotos"
+                = image_tag su.imgresume.url, class: "suits_fotos"
           .col-xs-3.col-md-3
-            %h3= link_to su.suitname, soul_resume_path(su.soul_id, su)
-            /%h4= .souls.born
-            /%h3= @user.souls.name
-
+            %h3= link_to su.soul.nickname, soul_resume_path(su.soul_id, su)
+            %h3
+              = su.soul.surname
+              = su.soul.name
+            %h4= su.soul.city
+            %br
+            %h5= link_to su.suitname, soul_resume_path(su.soul_id, su)
           .col-xs-3.col-md-3
             .skill_show
-            /  %h5 skill list
-            /  %ul
-            /    - su.my_skills.each do |t|
-            /      %li= t.skill.upcase
+              %h5 skill list
+              %ul
+                - su.my_skills.each do |sk|
+                  %li= sk.skill.upcase
           .col-xs-3.col-md-3
             %h5 Projects and Dignity
             .skill_show
-            /  %h5 skill list
-            /  %ul
-            /    = link_to su do
-            /      - su.my_skills.map do |skill|
-            /        %li= skill.skill 
+              %h5 skill list
+              %h5
+              .body_resume_sho
+                = @projects.count
+                - @projects.each do |pr|
+                  .projectplate
+                    %h4= pr.name
+                    %h4= pr.url
+
+                  
 
   .col-xs-1.col-md-1

@@ -1,7 +1,7 @@
 class CreateSouls < ActiveRecord::Migration
   def change
     create_table :souls do |t|
-      t.string :name, default: 'name'
+      t.string :name, default: 'Your name'
       t.string :surname, default: 'surname'
       t.string :nickname
       t.date :born, default: Time.now
