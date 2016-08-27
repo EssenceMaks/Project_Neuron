@@ -18,31 +18,45 @@
             .suit
               .suits_fotos
                 = image_tag su.imgresume.url, class: "suits_fotos"
+
           .col-xs-3.col-md-3
             %h3= link_to su.soul.nickname, soul_resume_path(su.soul_id, su)
             %h3
               = su.soul.surname
               = su.soul.name
-            %h4= su.soul.city
+            %h4
+              City: 
+              = su.soul.city
             %br
-            %h5= link_to su.suitname, soul_resume_path(su.soul_id, su)
+            %h4= link_to su.suitname, soul_resume_path(su.soul_id, su) 
+            %h5= link_to "#{truncate(su.suitdescription, length: 40)}", soul_resume_path(su.soul_id, su)
+
           .col-xs-3.col-md-3
+            .col-xs-3.col-md-3
             .skill_show
-              %h5 skill list
+              %h5 Technologies:
               %ul
                 - su.my_skills.each do |sk|
                   %li= sk.skill.upcase
-          .col-xs-3.col-md-3
-            %h5 Projects and Dignity
+            .col-xs-3.col-md-3
             .skill_show
-              %h5 skill list
-              %h5
-              .body_resume_sho
-                = @projects.count
-                - @projects.each do |pr|
-                  .projectplate
-                    %h4= pr.name
-                    %h4= pr.url
+              %h5 He is interested in:
+              %ul
+                - su.interested_ins.each do |sk|
+                  %li= sk.futureskill.upcase
+
+          .col-xs-3.col-md-3
+            %h4 Projects ( #{@projects.count} )
+            .allresumesplateprojectplate
+              - @projects.each do |pr|
+                .projectplate
+                  %h3= truncate(pr.name, length: 20)
+                  %h5= truncate(pr.description, length: 35)
+                  /%p= proj.description
+                  %h4
+                    visit website:
+                    = link_to " #{truncate(pr.name, length: 7)}", pr.url, target: '_blank'
+                %br
 
                   
 

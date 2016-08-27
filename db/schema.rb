@@ -259,10 +259,10 @@ ActiveRecord::Schema.define(version: 20160807133255) do
   add_index "resumes", ["soul_id"], name: "index_resumes_on_soul_id"
 
   create_table "souls", force: :cascade do |t|
-    t.string   "name",                 default: "name"
+    t.string   "name",                 default: "Your name"
     t.string   "surname",              default: "surname"
     t.string   "nickname"
-    t.date     "born",                 default: '2016-08-07'
+    t.date     "born",                 default: '2016-08-27'
     t.string   "city"
     t.string   "mob_number"
     t.string   "facebook"
