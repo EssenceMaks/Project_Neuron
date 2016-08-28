@@ -28,27 +28,26 @@
               City: 
               = su.soul.city
             %br
-            %h4= link_to su.suitname, soul_resume_path(su.soul_id, su) 
-            %h5= link_to "#{truncate(su.suitdescription, length: 40)}", soul_resume_path(su.soul_id, su)
+            %h4= link_to "#{truncate(su.suitname, length: 20)}", soul_resume_path(su.soul_id, su) 
+            %h5= link_to "#{truncate(su.suitdescription, length: 20)}", soul_resume_path(su.soul_id, su)
 
           .col-xs-3.col-md-3
-            .col-xs-3.col-md-3
-            .skill_show
-              %h5 Technologies:
+            .skillsall
+              %h3 Technologies:
               %ul
                 - su.my_skills.each do |sk|
-                  %li= sk.skill.upcase
-            .col-xs-3.col-md-3
-            .skill_show
-              %h5 He is interested in:
+                  .glyphicon.glyphicon-ok-circle
+                  = "#{sk.skill.upcase}&nbsp;&nbsp;".html_safe
+              %h3 "#{su.soul.name}" is interested in:
               %ul
-                - su.interested_ins.each do |sk|
-                  %li= sk.futureskill.upcase
+                - su.interested_ins.each do |skf|
+                  .glyphicon.glyphicon-time 
+                  =  "#{skf.futureskill.upcase}&nbsp;&nbsp;".html_safe
 
           .col-xs-3.col-md-3
-            %h4 Projects ( #{@projects.count} )
+            %h3 Projects ( #{su.soul.projects.count} )
             .allresumesplateprojectplate
-              - @projects.each do |pr|
+              - su.soul.projects.each do |pr|
                 .projectplate
                   %h3= truncate(pr.name, length: 20)
                   %h5= truncate(pr.description, length: 35)
