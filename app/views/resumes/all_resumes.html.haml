@@ -35,14 +35,16 @@
             .skillsall
               %h3 Technologies:
               %ul
-                - su.my_skills.each do |sk|
+              - su.my_skills.each do |sk|
+                %li.poins{ :style => "list-style-type: none;" }
                   .glyphicon.glyphicon-ok-circle
                   = "#{sk.skill.upcase}&nbsp;&nbsp;".html_safe
               %h3 "#{su.soul.name}" is interested in:
               %ul
-                - su.interested_ins.each do |skf|
+              - su.interested_ins.each do |skf|
+                %li.points{ :style => "list-style-type: none;" }
                   .glyphicon.glyphicon-time 
-                  =  "#{skf.futureskill.upcase}&nbsp;&nbsp;".html_safe
+                  = "#{skf.futureskill.upcase}&nbsp;&nbsp;".html_safe
 
           .col-xs-3.col-md-3
             %h3 Projects ( #{su.soul.projects.count} )
