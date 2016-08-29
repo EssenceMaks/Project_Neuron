@@ -89,98 +89,40 @@
 		.namebut {
 		}
 
-/* all resumes */
-.headsuitsshow {
 
-}
-	.searchsuitsshow {
-		background-image: url('congruent_pentagon.png');
-		height: 75px;
-		margin-bottom: 10px;
-		border-radius: 0px 0px 4px 4px; 
-	}
-
-.bodysuitsshow{
-	height: 83vh;
-	overflow: auto;
-	/*background-image: url('congruent_pentagon.png');*/
-	background-image: url('hex2.png');
-	border-radius: 4px 4px 30px 30px; 
-}
-	.user_plate {
-		height: 300px;
-		background-image: url('geometry2.png');
-		margin-top: 10px;
-		margin-bottom: 10px;
-		padding-top: 10px;
-		border-radius: 5px; 
-	}
-			.suits_fotos{
-				height: 280px;
-			    width: 200px;
-			    border-radius: 10px;
-			}
-			.skillsall{
-				height: 280px;
-				width: 280px;
-				margin: auto;
-				overflow: auto;
-			}
-			.allresumesplateprojectplate {
-				padding: 5px;
-				margin: auto;
-				height: 230px;
-				overflow: auto;
-			}
-				.projectplate {
-					background: orange;
-					margin: auto;
-					margin-top: 3px;
-					margin-bottom: 3px;
-					height: 140px;
-				    width: 200px;
-				    overflow: auto;
-				    border-radius: 10px;
-				    padding: 5px 0px 5px 5px;
-				}
 
 
 /* current resume*/
 
-.suit_header {
+.suitshowheader {
 	position: relative;
+	left: -100px;
 	/*background-image: url('congruent_pentagon.png');*/
 	background-image: url('hex2.png');
 	height: 150px;
 	width: 1600px;
-	right: 170px;
     margin-top: 10px;
     margin-bottom: 100px;
     border-radius: 4px 4px 35px 35px; 
 }
-		.suit_foto {
+		.suitfoto {
 			margin-left: 40px;
 			height: 230px;
 			width: 190px;
 			border-radius: 4px 4px 20px 20px;
 		}
 
-
-.suit_navigation {
-	text-align: center;
-}
-
-#user_mobile_number {
+#usermobilenumber {
 	text-align: right;
 	margin-top: 28px;
 }
 
-#user_sosial_networks {
+#usersosialnetworks {
 	display: inline-block;
 
 }
 
-.sosial_logo_suit_show_page {
+.sosiallogosuitshowpage {
 	width: 80px;
 	height: 80px;
 	margin: -5px;
@@ -192,7 +134,7 @@
 	}
 	*/
 
-.sosial_logo_suit_show_page_transform {
+.sosiallogosuitshowpagetransform {
 	display: inline-block;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -200,7 +142,7 @@
 	height: 70px;
 	width: 70px
 }
-.sosial_logo_suit_show_page_transform:hover {
+.sosiallogosuitshowpagetransform:hover {
 	background-color: #ff0800;
 	border-radius: 25px;
 }

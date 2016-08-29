@@ -1,62 +1,66 @@
-.suit_header
+.suitshowheader
   .col-sm-2
     .block_suit_foto
-      = link_to(image_tag(@resume.imgresume.url , :title => "Back to Welcome Page", :class => "suit_foto"), root_path)
+      = link_to(image_tag(@resume.imgresume.url , :title => "#{@soul.name}'s soul information", :class => "suitfoto"), soul_path)
   .col-sm-4
     #user_suit_name
-      %h3= @soul.name + " " + @soul.surname
-      %h4= @soul.nickname
+      %h3= link_to @soul.name + " " + @soul.surname, soul_path
+      %h4= link_to @soul.nickname, soul_path
       %h4 Age: #{@age.year - @soul.born.year}
       %h4 City: #{@soul.city}
 
   .col-sm-2
-    #user_mobile_number
+    #usermobilenumber
       %h2= @soul.mob_number
       %p= @resume.workmail
       /%p mail-me function
   .col-sm-4
-    #user_sosial_networks
-      .sosial_logo_suit_show_page_transform
-        = link_to image_tag( 'in.png', :class => 'sosial_logo_suit_show_page' ), @soul.linkid, target: '_blank'
-      .sosial_logo_suit_show_page_transform
-        = link_to image_tag( 'github.png', :class => 'sosial_logo_suit_show_page' ), @soul.github, target: '_blank'
-      .sosial_logo_suit_show_page_transform
-        = link_to image_tag( 'fb.png', :class => 'sosial_logo_suit_show_page' ), @soul.facebook, target: '_blank'
-      .sosial_logo_suit_show_page_transform
-        = link_to image_tag( 'skype.png', :class => 'sosial_logo_suit_show_page' ), "#", target: '_blank', title: @soul.skype, data: { confirm: "Skype name is:   #{@soul.skype} " }#, class: 'sosial_logo_suit_show_page_tr'
+    #usersosialnetworks
+      .sosiallogosuitshowpagetransform
+        = link_to image_tag( 'in.png', :class => 'sosiallogosuitshowpage' ), @soul.linkid, target: '_blank'
+      .sosiallogosuitshowpagetransform
+        = link_to image_tag( 'github.png', :class => 'sosiallogosuitshowpage' ), @soul.github, target: '_blank'
+      .sosiallogosuitshowpagetransform
+        = link_to image_tag( 'fb.png', :class => 'sosiallogosuitshowpage' ), @soul.facebook, target: '_blank'
+      .sosiallogosuitshowpagetransform
+        = link_to image_tag( 'skype.png', :class => 'sosiallogosuitshowpage' ), "#", target: '_blank', title: @soul.skype, data: { confirm: "Skype name is:   #{@soul.skype} " }#, class: 'sosial_logo_suit_show_page_tr'
       /%h4= @soul.facebook
       /= link_to image_tag( 'fb.png'), @soul.facebook
       /%h4= @soul.skype
       /<a href=@soul.Facebook, target="_blank" class=" div1"><%= image_tag("fb.png", :title => "My Facebook", :class => "ava1")%><span class="name"></span></a></li>
 
-.suit_text
+.suitbody#myScrollspy
   .allcv
     .col-sm-1
     .col-sm-10
-      .Technologies
-      .col-xs-6.col-md-6
-        #Technologies_I_work_with:
-          %h3 Technologies I work with:
-          %ul
-            - @resume.my_skills.each do |skill|
-              %li= skill.skill 
-      .col-xs-6.col-md-6
-        #Interested_in:
-          %h3 Interested in:
-          %ul
-            - @resume.interested_ins.each do |interested_in|
-              %li= interested_in.futureskill
+      .technologies
+        .col-xs-6.col-md-6
+          #Technologies_I_work_with:
+            %h3 Technologies I work with:
+            %ul
+              - @resume.my_skills.each do |skill|
+                %li.poins{ :style => "list-style-type: none;" }
+                  .glyphicon.glyphicon-ok-circle
+                  = skill.skill 
+        .col-xs-6.col-md-6
+          #Interested_in:
+            %h3 Interested in:
+            %ul
+              - @resume.interested_ins.each do |interested_in|
+                %li.poins{ :style => "list-style-type: none;" }
+                  .glyphicon.glyphicon-time
+                  = interested_in.futureskill
       %h3 Software experiance:
-      .body_resume_sho
+      .currentresumebody
         - @projects.each do |proj|
-          .res_proj_1
+          .projectplate
             .col-xs-2.col-md-2
-              = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "project_fotos"), soul_project_path(@soul, proj)
-            .col-xs-5.col-md-5.scroll
+              = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "projectfotos"), soul_project_path(@soul, proj)
+            .col-xs-4.col-md-4.scroll
               %h4= link_to proj.name, soul_project_path(@soul, proj)
               %h5= proj.description
             .col-xs-3.col-md-3.scroll
-              %h5 Team Leader: #{proj.team}
+              %h5 Team Leader: #{proj.team.upcase}
               %h5 Squady:
               %ul
                 - proj.projectteams.each do |pro|
@@ -68,6 +72,14 @@
               %h4= link_to proj.name, proj.url, target: '_blank'
             /(:name, :description, :url, :imgproject, :team, :client, :imgproject, 
             /projectteams_attributes: [:id, :team, :_destroy])
+            .col-xs-1.col-md-1.scroll#commentslikes
+              %p
+                = proj.get_upvotes.size 
+                Likes
+              %p
+                = proj.get_downvotes.size 
+                Dislikes
+              %p= pluralize(proj.projcomments.count, "Comment")
       .body_resume_show
       %h3 Education:
       #Education:
