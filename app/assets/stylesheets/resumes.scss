@@ -134,33 +134,33 @@
 	min-height: 240px;
 	overflow-y: auto;
 }
-.currentresumebody{
+.currentresumebodypr{
 	max-height: 500px;
 	overflow: auto;
 }
-.projectplate{
-	height: 160px;
-	width: auto;
-	background-image: url('geometry2.png');
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border: 2px solid;
-    border-color: #b7071b; /*#ff0800 #7100A3 */ 
-	border-radius: 5px;
+	.currentresumebodyprojectplate{
+		height: 160px;
+		width: auto;
+		background-image: url('geometry2.png');
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border: 2px solid;
+	    border-color: #b7071b; /*#ff0800 #7100A3 */ 
+		border-radius: 5px;
 
-	}
-		.projectfotos{
-			height: 140px;
-		    width: 100px;
-		    border-radius: 10px;
 		}
-		.scroll{
-			height: 150px;
-			overflow: auto;
-		}
-		#commentslikes{
-			padding-left: 1px;
-			padding-right: 1px;
-		}
+			.projectfotos{
+				height: 140px;
+			    width: 100px;
+			    border-radius: 10px;
+			}
+			.scroll{
+				height: 160px;
+				overflow: auto;
+			}
+			#commentslikes{
+				padding-left: 1px;
+				padding-right: 1px;
+			}

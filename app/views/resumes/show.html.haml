@@ -29,7 +29,7 @@
       /%h4= @soul.skype
       /<a href=@soul.Facebook, target="_blank" class=" div1"><%= image_tag("fb.png", :title => "My Facebook", :class => "ava1")%><span class="name"></span></a></li>
 
-.suitbody#myScrollspy
+.suitbody
   .allcv
     .col-sm-1
     .col-sm-10
@@ -50,10 +50,10 @@
                 %li.poins{ :style => "list-style-type: none;" }
                   .glyphicon.glyphicon-time
                   = interested_in.futureskill
-      %h3 Software experiance:
-      .currentresumebody
+      %h3 Software experiance (projects):
+      .currentresumebodypr
         - @projects.each do |proj|
-          .projectplate
+          .currentresumebodyprojectplate
             .col-xs-2.col-md-2
               = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "projectfotos"), soul_project_path(@soul, proj)
             .col-xs-4.col-md-4.scroll
@@ -72,7 +72,7 @@
               %h4= link_to proj.name, proj.url, target: '_blank'
             /(:name, :description, :url, :imgproject, :team, :client, :imgproject, 
             /projectteams_attributes: [:id, :team, :_destroy])
-            .col-xs-1.col-md-1.scroll#commentslikes
+            .col-xs-1.col-md-1#commentslikes
               %p
                 = proj.get_upvotes.size 
                 Likes
