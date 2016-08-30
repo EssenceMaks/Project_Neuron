@@ -22,7 +22,7 @@
 	background-image: url('hex2.png');
 	border-radius: 4px 4px 30px 30px; 
 }
-	.user_plate {
+	.userplate {
 		height: 300px;
 		background-image: url('geometry2.png');
 		margin-top: 10px;
@@ -176,3 +176,44 @@
 	width: auto;
 	overflow: auto;
 }
+
+.currentresumehobbies {
+	max-height: 1400px;
+}
+	.hobbyplate{
+		background-image: url('geometry2.png');	
+		display: inline-block;
+		width: 550px;
+		height: 400px;
+		margin: 5px;
+		border: 2px solid;
+	    border-color: #ff0800; /* #b7071b #7100A3 */ 
+		border-radius: 5px;
+	}
+	.hobbypicture {
+	    margin-top: 15px;
+	    border-radius: 5px;
+	    height: 200px;
+	    width: 158px;
+	}
+	.hobbydesc {
+		margin-top: 15px;
+		padding-right: 10px;
+		width: 340px;
+		height: 200px;
+		overflow-y: auto;
+	}
+	#hobbyurl {
+		text-align: right;
+	}
+	.hoblist{	
+	}
+	.hobbylist {
+		margin-top: 15px;
+		height: 160px;
+		width: 360px;
+		overflow-y: auto;
+	}
+	.hoblikes{
+		margin-top: 15px;
+	}

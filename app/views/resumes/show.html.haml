@@ -137,8 +137,34 @@
                 Dislikes
                 |
                 = pluralize(purp.purpcomments.count, "Comment")
+      %h3 My hobbies:
       .currentresumehobbies
-        %h3 My hobbies:
+        - @hobbies.each do |hobb|
+          .hobbyplate
+            .hobtitle
+              .col-xs-4.col-md-4
+                = link_to image_tag(hobb.imghobby.url, :title => "Go to hobby", :class => "hobbypicture"), soul_hobby_path(@soul, hobb), target: '_blank'
+              .col-xs-8.col-md-8
+                .hobbydesc
+                  %h3=link_to hobb.title, soul_hobby_path(@soul, hobb), target: '_blank'
+                  %h5= hobb.description
+                  #hobbyurl
+                    %h3=link_to "Site", hobb.url, target: '_blank'
+            .hoblist
+              .col-xs-9.col-md-9
+                .hobbylist
+                  - hobb.hobbylists.each do |h|
+                    %li.explist{ :style => "list-style-type: none;"}
+                      = "- " + h.hob_mark
+              .col-xs-3.col-md-3
+                .hoblikes
+                  %h4
+                    = hobb.get_upvotes.size 
+                    Likes
+                  %h4
+                    = hobb.get_downvotes.size 
+                    Dislikes
+                  %h4= pluralize(hobb.hobcomments.count, "Comment")
       .currentresumemyqmya
         .col-xs-6.col-md-6
           %h3 My quotations:
