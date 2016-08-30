@@ -56,10 +56,10 @@
           .currentresumebodyprojectplate
             .col-xs-2.col-md-2
               = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "projectfotos"), soul_project_path(@soul, proj)
-            .col-xs-4.col-md-4.scroll
+            .col-xs-4.col-md-4.scr
               %h4= link_to proj.name, soul_project_path(@soul, proj)
               %h5= proj.description
-            .col-xs-3.col-md-3.scroll
+            .col-xs-3.col-md-3.scr
               %h5 Team Leader: #{proj.team.upcase}
               %h5 Squady:
               %ul
@@ -67,7 +67,7 @@
                   %li= pro.team.upcase
               /%h5= proj.projectteams.each {|pro| pro.team }
               /%p= truncate(proj.description, length: 25)
-            .col-xs-2.col-md-2.scroll
+            .col-xs-2.col-md-2.scr
               %h5 Site:  
               %h4= link_to proj.name, proj.url, target: '_blank'
             /(:name, :description, :url, :imgproject, :team, :client, :imgproject, 
@@ -80,23 +80,23 @@
                 = proj.get_downvotes.size 
                 Dislikes
               %p= pluralize(proj.projcomments.count, "Comment")
-      .currentresumeexperiance
       %h3 Experiance:
-      %ul
-        - @experiance.each do |exper|
-          %li.expname{ :style => "list-style-type: decimal;"}
-            %h4= link_to exper.title + ":", exper.workplaceurl, target: '_blank'
-            %h5
-              Since
-              = exper.startdate
-              to
-              = exper.enddate
-              = exper.datecomment
-            %ul
-              - exper.experiencelists.each do |ex|
-                %li.explist{ :style => "list-style-type: none;"}
-                  = "- " + ex.exp_mark
-            %h4= exper.description 
+      .currentresumeexperiance
+        %ul
+          - @experiance.each do |exper|
+            %li.expname{ :style => "list-style-type: decimal;"}
+              %h4= link_to exper.title + ":", exper.workplaceurl, target: '_blank'
+              %h5
+                Since
+                = exper.startdate
+                to
+                = exper.enddate
+                = exper.datecomment
+              %ul
+                - exper.experiencelists.each do |ex|
+                  %li.explist{ :style => "list-style-type: none;"}
+                    = "- " + ex.exp_mark
+              %h4= exper.description 
       .currentresumeeducation
       %h3 Education:
       #Education:
@@ -121,11 +121,25 @@
         %ul
           - @resume.reasons.each do |reas|
             %li= reas.reason 
-      .purposes
-        %h3 Life Purposes:
-      .purposes
+      %h3 Life Purposes:
+      .currentresumepurposes
+        %ul
+          - @purposes.each do |purp|
+            %li.prp{ :style => "list-style-type: upper-roman;"}
+              %h4=link_to purp.purport, soul_purpose_path(@soul, purp), target: '_blank'
+              %h5= purp.description
+              %h5=link_to "Site", purp.url, target: '_blank'
+              %h5
+                = purp.get_upvotes.size 
+                Likes
+                |
+                = purp.get_downvotes.size 
+                Dislikes
+                |
+                = pluralize(purp.purpcomments.count, "Comment")
+      .currentresumehobbies
         %h3 My hobbies:
-      .purposes
+      .currentresumemyqmya
         .col-xs-6.col-md-6
           %h3 My quotations:
         .col-xs-6.col-md-6

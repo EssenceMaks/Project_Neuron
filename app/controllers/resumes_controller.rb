@@ -33,6 +33,10 @@ class ResumesController < ApplicationController
 		@age = Time.now
 		@projects = Project.where(soul_id: @soul).order("created_at DESC")
 		@experiance = Experience.where(soul_id: @soul).order("created_at DESC")
+		@purposes = Purpose.where(soul_id: @soul).order("created_at DESC")
+		@hobbies = Hobby.where(soul_id: @soul).order("created_at DESC")
+		@quotations = Quotation.where(soul_id: @soul).order("created_at DESC")
+		@articles = Article.where(soul_id: @soul).order("created_at DESC")
 	end
 
 	def edit

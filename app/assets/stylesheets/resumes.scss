@@ -156,8 +156,10 @@
 			    width: 100px;
 			    border-radius: 10px;
 			}
-			.scroll{
-				height: 160px;
+			.scr{
+				height: 140px;
+				padding-bottom: 10px;
+				width: auto;
 				overflow: auto;
 			}
 			#commentslikes{
@@ -166,6 +168,11 @@
 			}
 .currentresumeexperiance{
 	max-height: 600px;
+	width: auto;
+	overflow: auto;
+}
+.currentresumepurposes{
+	max-height: 250px;
 	width: auto;
 	overflow: auto;
 }

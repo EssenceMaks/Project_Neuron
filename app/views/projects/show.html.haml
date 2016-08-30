@@ -14,7 +14,7 @@
         Likes
       %p
         =@project.get_downvotes.size
-        Likes
+        Dislikes
       =link_to "Like", like_soul_project_path(@soul, @project), method: :get
       =link_to "Dislike", dislike_soul_project_path(@soul, @project), method: :get
 
