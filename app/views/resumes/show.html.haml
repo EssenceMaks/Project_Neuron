@@ -1,20 +1,20 @@
 .suitshowheader
-  .col-lg-2
+  .col-sm-2.col-lg-2
     .block_suit_foto
       = link_to(image_tag(@resume.imgresume.url , :title => "#{@soul.name}'s soul information", :class => "suitfoto"), soul_path)
-  .col-lg-4
+  .col-sm-4.col-lg-4
     #user_suit_name
       %h3= link_to @soul.name + " " + @soul.surname, soul_path
       %h4= link_to @soul.nickname, soul_path
       %h4 Age: #{@age.year - @soul.born.year}
       %h4 City: #{@soul.city}
 
-  .col-lg-2
+  .col-sm-2.col-lg-2
     #usermobilenumber
       %h2= @soul.mob_number
       %p= @resume.workmail
       /%p mail-me function
-  .col-lg-4
+  .col-sm-4.col-lg-4
     #usersosialnetworks
       .sosiallogosuitshowpagetransform
         = link_to image_tag( 'in.png', :class => 'sosiallogosuitshowpage' ), @soul.linkid, target: '_blank'
@@ -31,8 +31,8 @@
 
 .suitbody
   .allcv
-    .col-lg-1
-    .col-lg-10
+    .col-sm-1.col-lg-1
+    .col-sm-10.col-lg-10
       .technologies
         .col-xs-6.col-md-6
           #Technologies_I_work_with:
@@ -172,7 +172,7 @@
           %h3 My articles:
 
 
-    .col-lg-1
+    .col-sm-1.col-lg-1
   .footer
   = link_to "new", new_soul_resume_path, class: "btn btn-default btn_bottom_back"
 
