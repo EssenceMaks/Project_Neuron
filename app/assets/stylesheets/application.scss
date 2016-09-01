@@ -27,7 +27,7 @@
 
 .body {
 	width: 1400px;
-	margin: auto;
+	margin: 0 auto;
 	height: auto;
 	align-content: center;
 	background-image: url('points.png');
@@ -45,8 +45,7 @@
 }
 
 .mainnavigation {
-	position: fixed;
-	z-index: 999;
+	position: absolute;
 	bottom: 0;
 	margin: 0px 300px;
 	background-image: url('congruent_pentagon.png');
