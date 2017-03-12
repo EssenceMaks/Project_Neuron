@@ -1,0 +1,313 @@
+/* BEGIN HEADER RESUME SHOW */
+
+.resumeshowhead {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 150px;
+
+	z-index: 1000;
+}
+
+.resumeshowheader {
+	position: relative;
+	    width: 99%;
+	/*background-image: url('congruent_pentagon.png');*/
+	background-image: url('hex2.png');
+	height: 150px;
+	min-width: 800px;
+	max-width: 1600px;
+	margin: 0px auto;
+    margin-top: 0px;
+    margin-bottom: 100px;
+    border-radius: 4px 4px 35px 35px; 
+}
+
+	.resumeshowheaderFOTO{
+		width: 15%;
+		display: inline-block;
+		float: left;
+		min-width: 200px;
+		max-width: 250px;
+	}
+ 		.resumeshowfoto {
+ 			position: relative;
+ 			float: right;
+			margin-left: 10%;
+			height: 250px;
+			width: 195px;
+			border-radius: 4px 4px 20px 20px;
+		}
+					   		.commandblock {
+							position: relative;
+							bottom: -2px;
+							left: 2px;
+							float: right;
+							width: 200px;
+							height: 50px;
+							display: inline-block;	
+						}
+
+							.commandbuttons{
+								display: inline-block;			
+								float: right;
+							}
+
+							.commandbuttons > a {
+							 	display: block;
+							 	float: right;
+							 	height: 30px;
+							 	width: 63px;
+							 	margin: 1px;
+							 	margin-top: 4px;
+								 	border: 4px double #ff0800;
+								 	border-radius: 5px;
+							 	color: black;
+							 	text-align: center;
+					   			vertical-align: middle;
+							 	background-color: #b1f6cb;
+							 }
+
+    .resumeshowheaderAGE{
+    	width: 22%;
+    	display: inline-block;
+		float: left;
+		min-width: 280px;
+		margin-left: 2%;
+    }
+   
+
+    .resumeshowheaderCONTACT{
+    	width: 23%;
+    	display: inline-block;
+		float: right;
+		min-width: 170px;
+		    margin-right: 20px;
+		    margin-top: 5px;
+
+    }
+			#resumeshowusermobilenumber {
+
+				text-align: right;
+				margin-top: 5%;
+			}
+
+			#resumeshowusermobilenumber > h2{
+
+				
+				margin-top: 5%;
+			}
+ 
+    .resumeshowheaderSOSIAL{
+    	width: 30%;
+    	display: inline-block;
+		float: right;
+		min-width: 250px;
+		    margin-right: 2%;
+    }
+
+			#resumeshowusersosialnetworks {
+				display: inline-block;
+
+			}
+
+			.sosiallogoresumeshowtransform {
+				display: inline-block;
+				margin-left: 2%;
+				margin-right: 2%;
+				margin-top: 5%;
+				height: 20%;
+				width: 20%;
+			}
+					.sosiallogoresumeshow {
+						width: 102%;
+						height: 102%;
+						margin: -2% -2%;
+					}
+						/*
+						.sosial_logo_suit_show_page_transform:focus {
+
+							background-color: transparent;
+						}
+						*/
+
+					.sosiallogoresumeshowtransform:hover {
+						background-color: #ff0800;
+						background-size: 90%;
+						border-radius: 50%;
+					}
+@media screen and (max-width: 1260px) {
+/* 	body {
+		width: 400px;
+		min-width: 400px;
+	} */
+			#resumeshowusermobilenumber > h2{
+				margin-top: -7%;
+			}
+			#resumeshowusermobilenumber > p{
+				margin-top: -5%;
+			}
+			.resumeshowheaderCONTACT {
+				min-width: 250px;
+				margin-top: 1%;
+				margin-right: 4%;
+			}
+}
+/* END HEADER RESUME SHOW */
+
+
+
+
+
+
+.resumeshowfixedbody {
+			position: absolute;
+		width: 100%;
+			height: calc(100% - 237px);
+
+
+		margin-top: 160px;
+}
+
+		.resumeshowbody {
+			height: 100%;
+			position: relative;
+			  width: 100%;
+		  	min-width: 800px;
+			max-width: 1600px;
+					margin: 0px auto;
+
+
+		}
+
+/*
+		@media screen and (max-width: 1333px) {
+				.tabetblock {
+					width: 84%;
+				}
+		}
+
+*/
+
+.tabbed {
+  position: relative;
+
+  color: #EBCB79;
+  background-color: none;
+  width: calc(100% - 250px);
+			float: right;
+  min-width: 550px;
+  max-width: 1600px;
+  height: 100%;
+  margin: 0px auto;
+  
+
+}
+
+
+
+.tabbed > input {
+  display: none;
+}
+
+.tabbed > label {
+  	display: block;
+  	background-image: url('congruent_pentagon.png');
+  width: 24%;
+    height: 61px;
+    text-align: center;
+    vertical-align: middle;
+  font-size: 20px;
+  font-family: 'PT Sans';
+  color: black;
+  line-height: 0.9;
+  float: left;
+	  padding: 15px 10px;
+	  margin-right: 0.5%;
+	  margin-left: 0.5%;
+  	border: 2px solid #ff0800;
+  	border-radius: 7px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.tabbed > label:hover,
+.tabbed > input:checked + label {
+   /* #5b0d91 */
+  /*background-image: url('plate.png');*/
+  background:  #ff0800;
+  font-weight: bold;
+  border: 4px double gold;
+  color: gold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.tabs {
+  clear: both;
+  perspective: 800px;
+  color: black;
+  height: calc(100% - 130px);
+}
+
+.tabs > div {
+
+  background: none;/*#381D68;  #5b0d91 */
+  background-image: url('geometry2.png');
+  width: calc(99% + 250px);
+  margin: 0px 0.5%;
+  	margin-left: -250px;
+    margin-bottom: 20px;
+  max-width: 1600px;
+  		height: auto;
+  		max-height: 100%;
+  		overflow-y: auto;
+  position: absolute;
+  left: 0.5%;
+	  border: 4px double gold;
+	  border-radius: 7px;
+  padding: 10px;
+
+
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0;
+}
+
+
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4),
+#tab-nav-5:checked ~ .tabs > div:nth-of-type(5),
+#tab-nav-6:checked ~ .tabs > div:nth-of-type(6),
+#tab-nav-7:checked ~ .tabs > div:nth-of-type(7),
+#tab-nav-8:checked ~ .tabs > div:nth-of-type(8),
+#tab-nav-9:checked ~ .tabs > div:nth-of-type(9),
+#tab-nav-10:checked ~ .tabs > div:nth-of-type(10),
+#tab-nav-11:checked ~ .tabs > div:nth-of-type(11),
+#tab-nav-12:checked ~ .tabs > div:nth-of-type(12){
+  transform: rotateX(0deg);
+  opacity: 1;
+  z-index: 1;
+}
+
+
+.resumedescription {
+	width: 96%;
+	margin: 0px 2%;
+
+}
+
+
+.resumeshowtabsmargin {
+	width: 96%;
+	margin: 0px 2%;
+
+}

@@ -24,18 +24,23 @@
 	font-family: 'Ubuntu'
 }
 */
+%body {
+
+}
 
 .body {
 	width: 1400px;
 	margin: 0 auto;
 	height: auto;
+
 	align-content: center;
 	background-image: url('points.png');
 	font-family: Ubuntu;
 }
 .bodybackg{
-	background-image: url('hex2.png');
-	margin-bottom: 70px;	
+	background-image: url('points.png');
+	font-family: Ubuntu;	
+
 }
 
 .mainbody {
@@ -43,57 +48,6 @@
     margin-bottom: 70px; 
     height: auto;  
 }
-
-.mainnavigation {
-	position: absolute;
-	bottom: 0;
-	margin: 0px 300px;
-	background-image: url('congruent_pentagon.png');
-	/*background-image: url('hex3.png');*/ 
-	width: 800px;
-	height: 70px;
-	border: 3px solid;
-	border-color: gold;
-	font-weight: 800;
-	border-radius: 40px 40px 5px 5px;
-}
-		.homebut {
-   			border-bottom: 2px solid #ff0800;
-    		color: white;
-    		padding: 1px 50px 1px 50px;
-		    text-align: center;
-		    text-decoration: none;
-		    display: inline-block;
-		    font-size: 20px;
-		}
-		.navbar-brand{
-			position: relative;
-			text-align: center;
-			left: 40px;
-			margin: auto;
-			padding-top: 20px;
-		}
-		.suitsbut {
-			text-align: center;
-		    text-decoration: none;
-		    display: inline-block;
-		    font-size: 25px;
-		    padding: 14px 50px 1px 50px;
-		}
-		.newsuitbut{
-			border-bottom: 2px solid #ff0800;
-    		color: white;
-    		padding: 1px 40px 1px 40px;
-		    text-align: center;
-		    text-decoration: none;
-		    display: inline-block;
-		    font-size: 20px;
-		}
-		.namebut {
-		}
-
-
-
 
 
 
@@ -155,3 +109,4 @@
 			background-image: url('geometry2.png');
 			border-radius: 15px;
 		}
+

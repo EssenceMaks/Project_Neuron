@@ -1,183 +1,237 @@
-.suitshowheader
-  .col-sm-2.col-lg-2
-    .block_suit_foto
-      = link_to(image_tag(@resume.imgresume.url , :title => "#{@soul.name}'s soul information", :class => "suitfoto"), soul_path)
-  .col-sm-4.col-lg-4
-    #user_suit_name
-      %h3= link_to @soul.name + " " + @soul.surname, soul_path
-      %h4= link_to @soul.nickname, soul_path
-      %h4 Age: #{@age.year - @soul.born.year}
-      %h4 City: #{@soul.city}
+.resumeshowhead
+  .resumeshowheader
+    .resumeshowheaderFOTO
+      .block_suit_foto
+        = link_to(image_tag(@resume.imgresume.url , :title => "#{@soul.name}'s soul information", :class => "resumeshowfoto"), soul_path)
 
-  .col-sm-2.col-lg-2
-    #usermobilenumber
-      %h2= @soul.mob_number
-      %p= @resume.workmail
-      /%p mail-me function
-  .col-sm-4.col-lg-4
-    #usersosialnetworks
-      .sosiallogosuitshowpagetransform
-        = link_to image_tag( 'in.png', :class => 'sosiallogosuitshowpage' ), @soul.linkid, target: '_blank'
-      .sosiallogosuitshowpagetransform
-        = link_to image_tag( 'github.png', :class => 'sosiallogosuitshowpage' ), @soul.github, target: '_blank'
-      .sosiallogosuitshowpagetransform
-        = link_to image_tag( 'fb.png', :class => 'sosiallogosuitshowpage' ), @soul.facebook, target: '_blank'
-      .sosiallogosuitshowpagetransform
-        = link_to image_tag( 'skype.png', :class => 'sosiallogosuitshowpage' ), "#", target: '_blank', title: @soul.skype, data: { confirm: "Skype name is:   #{@soul.skype} " }#, class: 'sosial_logo_suit_show_page_tr'
-      /%h4= @soul.facebook
-      /= link_to image_tag( 'fb.png'), @soul.facebook
-      /%h4= @soul.skype
-      /<a href=@soul.Facebook, target="_blank" class=" div1"><%= image_tag("fb.png", :title => "My Facebook", :class => "ava1")%><span class="name"></span></a></li>
+      .commandblock
+        .commandbuttons
+          = link_to "new", new_soul_resume_path, class: " navbutresumeshow "
 
-.suitbody
-  .allcv
-    .col-sm-1.col-lg-1
-    .col-sm-10.col-lg-10
-      .technologies
-        .col-xs-6.col-md-6
-          #Technologies_I_work_with:
-            %h3 Technologies I work with:
+          - if @soul.user == current_user
+            = link_to "edit", edit_soul_resume_path, class: " navbutresumeshow"
+            = link_to "delete", soul_resume_path(@soul, @resume), method: :delete, data: {confirm: "Are you   sure?"}, class: " navbutresumeshow"
+    .resumeshowheaderAGE
+      #user_suit_name
+        %h3= link_to @soul.name + " " + @soul.surname, soul_path
+        %h4= link_to @soul.nickname, soul_path
+        %h4 Age: #{@age.year - @soul.born.year}
+        %h4 City: #{@soul.city}
+
+    .resumeshowheaderSOSIAL
+      #resumeshowusersosialnetworks
+        .sosiallogoresumeshowtransform
+          = link_to image_tag( 'in.png', :class => 'sosiallogoresumeshow' ), @soul.linkid, target: '_blank'
+        .sosiallogoresumeshowtransform
+          = link_to image_tag( 'github.png', :class => 'sosiallogoresumeshow' ), @soul.github, target: '_blank'
+        .sosiallogoresumeshowtransform
+          = link_to image_tag( 'fb.png', :class => 'sosiallogoresumeshow' ), @soul.facebook, target: '_blank'
+        .sosiallogoresumeshowtransform
+          = link_to image_tag( 'skype.png', :class => 'sosiallogoresumeshow' ), "#", target: '_blank', title: @soul.skype, data: { confirm: "Skype name is:   #{@soul.skype} " }#, class: 'sosial_logo_suit_show_page_tr'
+        /%h4= @soul.facebook
+        /= link_to image_tag( 'fb.png'), @soul.facebook
+        /%h4= @soul.skype
+        /<a href=@soul.Facebook, target="_blank" class=" div1"><%= image_tag("fb.png", :title => "My Facebook", :class => "ava1")%><span class="name"></span></a></li>
+
+    .resumeshowheaderCONTACT
+      #resumeshowusermobilenumber
+        %h2= @soul.mob_number
+        %p= @resume.workmail
+        /%p mail-me function
+
+
+
+
+
+%div.resumeshowfixedbody
+  %div.resumeshowbody
+
+    .tabbed
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-1", :checked=> true}
+        %label{:for=>"tab-nav-1"} Skills
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-2"}
+        %label{:for=>"tab-nav-2"} Projects
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-3"}
+        %label{:for=>"tab-nav-3"} Experiance
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-4"}
+        %label{:for=>"tab-nav-4"} Education
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-5"}
+        %label{:for=>"tab-nav-5"} Life Purposes 
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-6"}
+        %label{:for=>"tab-nav-6"} My hobbies
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-7"}
+        %label{:for=>"tab-nav-7"} My quotations 
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-8"}
+        %label{:for=>"tab-nav-8"} My articles
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-9",:style => "display: none;"}
+        %label{:for=>"tab-nav-9",:style => "display: none;"} for future
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-10",:style => "display: none;"}
+        %label{:for=>"tab-nav-10",:style => "display: none;"} for future
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-11",:style => "display: none;"}
+        %label{:for=>"tab-nav-11",:style => "display: none;"} for future 
+      %input{:type=>"radio", :name => "tabs", :id=>"tab-nav-12",:style => "display: none;"}
+        %label{:for=>"tab-nav-12",:style => "display: none;"} for future
+      %div{ :class => ['tabs']}
+        %div
+          .resumedescription
+            %h4
+              Work status:
+              = @resume.suitname
+            %h5= @resume.suitdescription
+          .resumeshowtabsmargin 
+            .technologies
+              .col-xs-6.col-md-6
+                #Technologies_I_work_with:
+                  %h3 Technologies I work with:
+                  %ul
+                    - @resume.my_skills.each do |skill|
+                      %li.poins{ :style => "list-style-type: none;" }
+                        .glyphicon.glyphicon-ok-circle
+                        = skill.skill 
+              .col-xs-6.col-md-6
+                #Interested_in:
+                  %h3 Interested in:
+                  %ul
+                    - @resume.interested_ins.each do |interested_in|
+                      %li.poins{ :style => "list-style-type: none;" }
+                        .glyphicon.glyphicon-time
+                        = interested_in.futureskill
+                      
+          
+
+        %div
+          .resumeshowtabsmargin
+            %h3 Software experiance (projects):
+            .currentresumebodypr
+              - @projects.each do |proj|
+                .currentresumebodyprojectplate
+                  .col-xs-2.col-md-2
+                    = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "projectfotos"), soul_project_path(@soul, proj)
+                  .col-xs-2.col-md-2.scr
+                    %h5 Site:  
+                    %h4= link_to proj.name, proj.url, target: '_blank'
+                  /(:name, :description, :url, :imgproject, :team, :client, :imgproject, 
+                  /projectteams_attributes: [:id, :team, :_destroy])
+                  .col-xs-3.col-md-3.scr
+                    %h5 Team Leader: #{proj.team.upcase}
+                    %h5 Squady:
+                    %ul
+                      - proj.projectteams.each do |pro|
+                        %li= pro.team.upcase
+                    /%h5= proj.projectteams.each {|pro| pro.team }
+                    /%p= truncate(proj.description, length: 25)
+                  .col-xs-4.col-md-4.scr
+                    %h4= link_to proj.name, soul_project_path(@soul, proj)
+                    %h5= proj.description
+
+                  .col-xs-1.col-md-1#commentslikes
+                    %p
+                      = proj.get_upvotes.size 
+                      Likes
+                    %p
+                      = proj.get_downvotes.size 
+                      Dislikes
+                    %p= pluralize(proj.projcomments.count, "Comment")  
+        %div
+          .resumeshowtabsmargin
+            %h3 Experiance:
             %ul
-              - @resume.my_skills.each do |skill|
-                %li.poins{ :style => "list-style-type: none;" }
-                  .glyphicon.glyphicon-ok-circle
-                  = skill.skill 
-        .col-xs-6.col-md-6
-          #Interested_in:
-            %h3 Interested in:
-            %ul
-              - @resume.interested_ins.each do |interested_in|
-                %li.poins{ :style => "list-style-type: none;" }
-                  .glyphicon.glyphicon-time
-                  = interested_in.futureskill
-      %h3 Software experiance (projects):
-      .currentresumebodypr
-        - @projects.each do |proj|
-          .currentresumebodyprojectplate
-            .col-xs-2.col-md-2
-              = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "projectfotos"), soul_project_path(@soul, proj)
-            .col-xs-4.col-md-4.scr
-              %h4= link_to proj.name, soul_project_path(@soul, proj)
-              %h5= proj.description
-            .col-xs-3.col-md-3.scr
-              %h5 Team Leader: #{proj.team.upcase}
-              %h5 Squady:
+              - @experiance.each do |exper|
+                %li.expname{ :style => "list-style-type: decimal;"}
+                  %h4= link_to exper.title + ":", exper.workplaceurl, target: '_blank'
+                  %h5
+                    Since
+                    = exper.startdate
+                    to
+                    = exper.enddate
+                    = exper.datecomment
+                  %ul
+                    - exper.experiencelists.each do |ex|
+                      %li.explist{ :style => "list-style-type: none;"}
+                        = "- " + ex.exp_mark
+                  %h4= exper.description 
+        %div
+          .resumeshowtabsmargin
+            .currentresumeeducation
+            %h3 Education:
+            #Education:
               %ul
-                - proj.projectteams.each do |pro|
-                  %li= pro.team.upcase
-              /%h5= proj.projectteams.each {|pro| pro.team }
-              /%p= truncate(proj.description, length: 25)
-            .col-xs-2.col-md-2.scr
-              %h5 Site:  
-              %h4= link_to proj.name, proj.url, target: '_blank'
-            /(:name, :description, :url, :imgproject, :team, :client, :imgproject, 
-            /projectteams_attributes: [:id, :team, :_destroy])
-            .col-xs-1.col-md-1#commentslikes
-              %p
-                = proj.get_upvotes.size 
-                Likes
-              %p
-                = proj.get_downvotes.size 
-                Dislikes
-              %p= pluralize(proj.projcomments.count, "Comment")
-      %h3 Experiance:
-      .currentresumeexperiance
-        %ul
-          - @experiance.each do |exper|
-            %li.expname{ :style => "list-style-type: decimal;"}
-              %h4= link_to exper.title + ":", exper.workplaceurl, target: '_blank'
-              %h5
-                Since
-                = exper.startdate
-                to
-                = exper.enddate
-                = exper.datecomment
+                - @resume.educations.each do |education|
+                  %li= education.college
+        
+            #Additional_education:
+              %h3 Additional education:
               %ul
-                - exper.experiencelists.each do |ex|
-                  %li.explist{ :style => "list-style-type: none;"}
-                    = "- " + ex.exp_mark
-              %h4= exper.description 
-      .currentresumeeducation
-      %h3 Education:
-      #Education:
-        %ul
-          - @resume.educations.each do |education|
-            %li= education.college
-  
-      #Additional_education:
-        %h3 Additional education:
-        %ul
-          - @resume.additional_educations.each do |additional_education|
-            %li= additional_education.academy 
-  
-      #Additional_education:
-        %h3 Work objectives:
-        %ul
-          - @resume.workobjectives.each do |workobjective|
-            %li= workobjective.objective 
-  
-      #Additional_education:
-        %h3 Reasons to find a new job:
-        %ul
-          - @resume.reasons.each do |reas|
-            %li= reas.reason 
-      %h3 Life Purposes:
-      .currentresumepurposes
-        %ul
-          - @purposes.each do |purp|
-            %li.prp{ :style => "list-style-type: upper-roman;"}
-              %h4=link_to purp.purport, soul_purpose_path(@soul, purp), target: '_blank'
-              %h5= purp.description
-              %h5=link_to "Site", purp.url, target: '_blank'
-              %h5
-                = purp.get_upvotes.size 
-                Likes
-                |
-                = purp.get_downvotes.size 
-                Dislikes
-                |
-                = pluralize(purp.purpcomments.count, "Comment")
-      %h3 My hobbies:
-      .currentresumehobbies
-        - @hobbies.each do |hobb|
-          .hobbyplate
-            .hobtitle
-              .col-xs-4.col-md-4
-                = link_to image_tag(hobb.imghobby.url, :title => "Go to hobby", :class => "hobbypicture"), soul_hobby_path(@soul, hobb), target: '_blank'
-              .col-xs-8.col-md-8
-                .hobbydesc
-                  %h3=link_to hobb.title, soul_hobby_path(@soul, hobb), target: '_blank'
-                  %h5= hobb.description
-                  #hobbyurl
-                    %h3=link_to "Site", hobb.url, target: '_blank'
-            .hoblist
-              .col-xs-9.col-md-9
-                .hobbylist
-                  - hobb.hobbylists.each do |h|
-                    %li.explist{ :style => "list-style-type: none;"}
-                      = "- " + h.hob_mark
-              .col-xs-3.col-md-3
-                .hoblikes
-                  %h4
-                    = hobb.get_upvotes.size 
-                    Likes
-                  %h4
-                    = hobb.get_downvotes.size 
-                    Dislikes
-                  %h4= pluralize(hobb.hobcomments.count, "Comment")
-      .currentresumemyqmya
-        .col-xs-6.col-md-6
-          %h3 My quotations:
-        .col-xs-6.col-md-6
-          %h3 My articles:
-
-
-    .col-sm-1.col-lg-1
-  .footer
-  = link_to "new", new_soul_resume_path, class: "btn btn-default btn_bottom_back"
+                - @resume.additional_educations.each do |additional_education|
+                  %li= additional_education.academy 
+        
+            #Additional_education:
+              %h3 Work objectives:
+              %ul
+                - @resume.workobjectives.each do |workobjective|
+                  %li= workobjective.objective 
+        %div
+          .resumeshowtabsmargin
+            %h3 Life Purposes:
+            .currentresumepurposes
+              %ul
+                - @purposes.each do |purp|
+                  %li.prp{ :style => "list-style-type: upper-roman;"}
+                    %h4=link_to purp.purport, soul_purpose_path(@soul, purp), target: '_blank'
+                    %h5= purp.description
+                    %h5=link_to "Site", purp.url, target: '_blank'
+                    %h5
+                      = purp.get_upvotes.size 
+                      Likes
+                      |
+                      = purp.get_downvotes.size 
+                      Dislikes
+                      |
+                      = pluralize(purp.purpcomments.count, "Comment")
+        %div#test
+          .resumeshowtabsmargin
+            %h3 My hobbies:
+            .currentresumehobbies
+              - @hobbies.each do |hobb|
+                .hobbyplate
+                  .hobtitle
+                    .col-xs-4.col-md-4
+                      = link_to image_tag(hobb.imghobby.url, :title => "Go to hobby", :class => "hobbypicture"), soul_hobby_path(@soul, hobb), target: '_blank'
+                    .col-xs-8.col-md-8
+                      .hobbydesc
+                        %h3=link_to hobb.title, soul_hobby_path(@soul, hobb), target: '_blank'
+                        %h5= hobb.description
+                        #hobbyurl
+                          %h3=link_to "Site", hobb.url, target: '_blank'
+                  .hoblist
+                    .col-xs-9.col-md-9
+                      .hobbylist
+                        - hobb.hobbylists.each do |h|
+                          %li.explist{ :style => "list-style-type: none;"}
+                            = "- " + h.hob_mark
+                    .col-xs-3.col-md-3
+                      .hoblikes
+                        %h4
+                          = hobb.get_upvotes.size 
+                          Likes
+                        %h4
+                          = hobb.get_downvotes.size 
+                          Dislikes
+                        %h4= pluralize(hobb.hobcomments.count, "Comment")
+        %div
+          .resumeshowtabsmargin
+            .currentresumemyqmya
+            .col-xs-6.col-md-6
+              %h3 My quotations:
+            .col-xs-6.col-md-6
+              %h3 My articles:
+        %div
+          .resumeshowtabsmargin
+            .currentresumemyqmya
+            .col-xs-6.col-md-6
+              %h3 My quotations:
+            .col-xs-6.col-md-6
+              %h3 My articles:
 
 
 
-  - if @soul.user == current_user
-    = link_to "edit", edit_soul_resume_path, class: "btn btn-default btn_bottom_back"
-    = link_to "delete", soul_resume_path(@soul, @resume), method: :delete, data: {confirm: "Are you   sure?"}, class: "btn btn-default btn_bottom_back"
