@@ -1,0 +1,35 @@
+
+.GeneralLeftBarNavigation
+  .LeftBarNavigation
+    .LBNtop
+      - if user_signed_in?
+        .avaLBN
+          /= link_to image_tag(@soul.imgsoul.url, :class => "minisoulava"), @soul
+          = link_to(image_tag(@soul.imgsoul.url, :title => "#{@soul.name}'s soul information", :class => "minisoulava"), @soul)
+        /= link_to "Home", home_path  #souls_path(current_user)
+        .hrLBN
+        .LBNcabinet
+          = link_to "Cabinet", cabinet_path
+        .LBNorganizer
+          = link_to "Organizer", organizer_path
+        /%br= current_user.soul.name
+      - else
+        .LBNsingIn
+          = link_to "Sign in", new_user_session_path
+        .hrLBN
+    .LBNcenter
+      .LBNsuits
+        = link_to "Suits", all_resumes_path
+      .hrLBN
+        .LBNsewAsuit    
+          - if user_signed_in?
+            = link_to "Sew New Suit", soul_resumes_path(current_user) #soul_project_path#, new_suit_path        
+          - else
+            = link_to "Sew My Suit", new_user_registration_path # LOGOIMAGE
+    .LBNbottom
+      - if user_signed_in?
+        .LBNsignOut
+          = link_to "Sign Out", destroy_user_session_path, :method => :delete
+      - else
+        .LBNsignUp 
+          = link_to "Sign Up", new_user_registration_path

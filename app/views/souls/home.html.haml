@@ -9,6 +9,8 @@
   %h2= @soul.name
   %h2= @soul.born
   %h2= @soul.surname
+  = image_tag @soul.imgsoul.url 
+
 
 
   = link_to "edit", edit_soul_path(current_user), class: "btn btn-default btn_bottom_back"

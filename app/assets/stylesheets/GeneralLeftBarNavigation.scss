@@ -1,0 +1,99 @@
+.GeneralLeftBarNavigation {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 70px;
+	height: 100%;
+	margin-right: 5px;
+}
+		.GeneralLeftBarNavigation a {
+			color: #ffd700;
+		}
+
+  .LeftBarNavigation {
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	background-color: #b7071b;
+
+  }
+
+  		.LBNtop {
+  			position: absolute;
+  			top: 0px;
+  			width: 70px;
+  		    
+  		}
+  			.avaLBN {
+  				width: 100%;
+  				height: 75px;
+  				margin: 2px 0px;
+  			}
+            .minisoulava {
+            	width: 66px;
+            	height: 75px;
+            	margin: 0px 2px;
+            }
+
+            		.LBNcabinet{
+            			text-align: center;
+            			margin: 5px 0px;
+            		}
+
+					.LBNorganizer{
+						text-align: center;
+						margin: 5px 0px;
+					}
+
+					.LBNsingIn {
+						text-align: center;
+						margin: 5px 0px;
+					}
+
+
+
+  		.LBNcenter { 
+  			position: absolute;
+  			top: 45%;
+  			width: 70px;
+  		}
+
+  					.LBNsuits  {
+  						text-align: center;
+  						margin: 5px 0px;
+
+  					}
+					.LBNsewAsuit {
+						text-align: center;
+						margin: 5px 0px;
+
+					}
+
+
+ 	    .LBNbottom {
+ 	    	position: absolute;
+ 	    	bottom: 40px;
+ 	    	width: 70px;
+ 	    }
+ 	    			.LBNsignOut {
+ 	    				text-align: center;
+ 	    				margin: 5px 0px;
+
+ 	    			}
+   					.LBNsignUp {
+   						text-align: center;
+   						margin: 5px 0px;
+
+   					}
+
+.hrLBN {
+    display: block;
+    height: 1px;
+    width: 58px;
+
+    border: 0;
+    border-top: 2px solid #ffd700;
+    margin: 1em 6px;
+}
+
+

@@ -7,6 +7,11 @@ class ResumesController < ApplicationController
 		@resume = Resume.all.order("created_at DESC")
 		@newsuits = Resume.where(soul_id: @soul).order("created_at DESC")
 		@projects = Project.all.order("created_at DESC")
+		@soul = Soul.where(soul_id: params[:user_id]).order("created_at DESC")
+
+		if user_signed_in?
+		  @soul = current_user.soul
+	    end
 	    #@soul = Soul.find(params[:soul_id])
 	    #@soul = Soul.find(params[:id])
 	end
@@ -37,6 +42,7 @@ class ResumesController < ApplicationController
 		@hobbies = Hobby.where(soul_id: @soul).order("created_at DESC")
 		@quotations = Quotation.where(soul_id: @soul).order("created_at DESC")
 		@articles = Article.where(soul_id: @soul).order("created_at DESC")
+
 	end
 
 	def edit

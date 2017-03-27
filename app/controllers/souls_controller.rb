@@ -13,11 +13,11 @@ class SoulsController < ApplicationController
 	end
 
 	def cabinet
-		
+		@soul = current_user.soul
 	end
 
 	def organizer
-		
+		@soul = current_user.soul
 	end
 
 	def show # current user soul page

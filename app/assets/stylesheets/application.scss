@@ -18,6 +18,57 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+/*
+  .navbar {
+	color: #ffe700 ;
+	    background-color: rgba(255, 0, 0, 0.8);
+
+
+
+	    Основной Цвет:
+		red	#FF0000	#BF3030	#A60000	#FF4040	#FF7373
+			Вторичный Цвет A:
+		orange	#FF7400	#BF7130	#A64B00	#FF9640	#FFB273
+			Вторичный Цвет B:
+		akva	#009999	#1D7373	#006363	#33CCCC	#5CCCCC
+			Дополнительный Цвет:
+		green	#00CC00	#269926	#008500	#39E639	#67E667
+  }
+
+	.allresume {
+	
+	00CC00
+
+
+				green	#00CC00	#269926	#008500	#39E639	#67E667
+					Вторичный Цвет A:
+				yellow	#FFFA00	#BFBC30	#A6A300	#FFFB40	#FFFC73
+					Вторичный Цвет B:
+				violet	#6A0AAB	#5C2680	#44036F	#983FD5	#A967D5
+					Дополнительный Цвет:
+				red 	#FF0000	#BF3030	#A60000	#FF4040	#FF7373
+
+
+
+
+	}
+	
+	.Earth  and else {
+	
+
+	#7109AA
+	
+	}
+
+
+
+*/
+
+
+
+
+
 /*
 .body{
 	background-image: url('points.png');
@@ -25,6 +76,7 @@
 }
 */
 %body {
+		color: #494949;
 
 }
 
@@ -36,10 +88,12 @@
 	align-content: center;
 	background-image: url('points.png');
 	font-family: Ubuntu;
+
 }
 .bodybackg{
 	background-image: url('points.png');
 	font-family: Ubuntu;	
+	margin-left: 70px;
 
 }
 

@@ -7,6 +7,9 @@
   = csrf_meta_tags
 
 %body.bodybackg
+
+  = render "layouts/generalleftbarnavigation"
+
   = yield
   .msg
     - flash.each do |name, msg|
@@ -17,5 +20,3 @@
   /  .mainbody
 
 
-
-  = render "layouts/mainbottomnav"
