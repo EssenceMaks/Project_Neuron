@@ -26,26 +26,26 @@
 
 .resumeshowheader {
 	position: relative;
-	    width: 99%;
+	    width: 98%;
 	background-image: url('congruent_pentagon.png');
 	/*background-image: url('hex2.png');*/
 	height: 80px;
 	min-width: 800px;
 	max-width: 1600px;
-	margin: 0px auto;
+	margin-left: 10px;
+	margin-right: calc(1% - 10px);
     margin-top: 0px;
     margin-bottom: 100px;
     border-radius: 4px 4px 35px 4px; 
 }
 
 	.resumeshowheaderFOTO{
-		width: 15%;
+		width: 160px;
 		display: inline-block;
 		float: left;
-		min-width: 150px;
-		max-width: 250px;
 		padding-left: 10px;
 		padding-right: 5px;
+		padding-top: 3px;
 	}
  		.resumeshowfoto {
  			position: relative;
@@ -58,16 +58,16 @@
 
 
     .resumeshowheaderAGE{
-    	width: 77%;
+    	width: calc(100% - 180px);
     	display: inline-block;
 		float: left;
 		min-width: 280px;
-		margin-left: 2%;
+		margin-left: 10px;
     }
    
 
     .resumeshowheaderCONTACT{
-    	width: 23%;
+    	width: calc(100% - 180px);
     	display: inline-block;
 		float: right;
 		min-width: 170px;
@@ -87,12 +87,12 @@
 			}
  
     .resumeshowheaderSOSIAL{
-    	width: 75%;
+    	width: calc(100% - 190px);
     	    	display: inline-block;
 		float: left;
 		min-width: 250px;
-			margin-left: 2%;
-		    margin-right: 2%;
+			margin-left: 10px;
+		    margin-right: 10px;
     }
 
 			#resumeshowusersosialnetworks {
@@ -148,7 +148,7 @@
 
 .fixbod {
 	position: fixed;
-	top: 190px;
+	top: 193px;
 	width: calc(100% - 70px);
 	height: 100%;
 }
@@ -159,13 +159,13 @@
 			position: absolute;
 		    left:0;
 		    right:0;
-		    margin-left:auto;
-		    margin-right:auto;
+		    margin-left:10px;
+		    
 		width: 99%;
 		min-width: 800px;
     	max-width: 1600px;	
 			height: calc(100% - 80px);
-		margin: 0px auto;
+
 
 		
 }
@@ -176,7 +176,7 @@
 			  width: 100%;
 		  	min-width: 800px;
 			max-width: 1600px;
-					margin: 0px auto;
+				margin-left: 10px
 
 
 		}
@@ -212,7 +212,7 @@ display: inline-block;
 
   	
   margin: 0px auto;
-	padding-left: calc(15% - 150px);
+	/*padding-left: calc(15% - 150px);*/
   
 }
 
@@ -311,9 +311,9 @@ display: inline-block;
 
   background: none;/*#381D68;  #5b0d91 */
   background-image: url('geometry2.png');
-  width: calc(99% - 230px);
+  width: 0px;
   margin: 0px 0.5%;
-  	margin-top: -430px;
+  	margin-top: -435px;
   	margin-left: 155px;
     margin-bottom: 20px;
   max-width: 1600px;
@@ -325,13 +325,9 @@ display: inline-block;
 	  border: 4px double #00CC00;
 	  border-radius: 2px 2px 7px 7px;
   padding: 10px;
-
-
   line-height: 1.4em;
   opacity: 0;
-  transform: rotateX(-20deg);
-  transform-origin: top center;
-  transition: opacity .3s, transform 1s;
+  transition: opacity .4s, width .4s;
   z-index: 0;
 }
 
@@ -349,7 +345,8 @@ display: inline-block;
 #tab-nav-10:checked ~ .tabs > div:nth-of-type(10),
 #tab-nav-11:checked ~ .tabs > div:nth-of-type(11),
 #tab-nav-12:checked ~ .tabs > div:nth-of-type(12){
-  transform: rotateX(0deg);
+  width: calc(99% - 200px);
+  transition: opacity 1.2s, width 1s;
   opacity: 1;
   z-index: 1;
 }
