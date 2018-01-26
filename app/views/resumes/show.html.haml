@@ -117,7 +117,7 @@
                 - @projects.each do |proj|
                   .currentresumebodyprojectplate
                     .col-xs-2.col-md-2
-                      = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "projectfotos"), soul_project_path(@soul, proj)
+                      = link_to image_tag(proj.imgproject.url, :title => "Back to Welcome Page", :class => "projectfotos"), proj.url, target: '_blank'
                     .col-xs-2.col-md-2.scr
                       %h5 Site:  
                       %h4= link_to proj.name, proj.url, target: '_blank'
